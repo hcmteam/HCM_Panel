@@ -171,7 +171,7 @@ func TestCertificateReadersRefuseWhatIsNoBoundedRegularFile(t *testing.T) {
 	if err := os.WriteFile(big, make([]byte, 1<<20+1), 0o600); err != nil {
 		t.Fatal(err)
 	}
-	if _, err := loadCertificate(big, big); err == nil || !strings.Contains(err.Error(), "regular file") {
+	if _, err := loadCertificate(big, big); err == nil || !strings.Contains(err.Error(), "local certificate directory") {
 		t.Fatalf("loadCertificate(oversized) = %v, want the path refused before the read", err)
 	}
 	inst := Instance{Certificate: big}
