@@ -41,7 +41,7 @@ const DONATE_URL = 'https://donate.sanaei.dev/';
 // Mac glyph to the Linux and Windows operators who are most of this panel's.
 const SHORTCUT_MODIFIER = /Mac|iPhone|iPad|iPod/.test(navigator.userAgent) ? '⌘' : 'Ctrl';
 const DOCS_URL = 'https://docs.sanaei.dev/';
-const REPO_URL = 'https://github.com/MHSanaei/3x-ui';
+const REPO_URL = 'https://github.com/hcmteam/h-panel';
 const LOGOUT_KEY = '__logout__';
 const SETTINGS_GROUP_PATHS = ['/nodes', '/hosts', '/outbound', '/routing'];
 const RAIL_WIDTH = 72;

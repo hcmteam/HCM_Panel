@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/dbtest"
+	"github.com/hcmteam/h-panel/v3/internal/database/dbtest"
 
 	"github.com/mymmrac/telego"
 )

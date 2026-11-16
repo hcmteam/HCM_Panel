@@ -13,8 +13,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/robfig/cron/v3"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/dbtest"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/global"
+	"github.com/hcmteam/h-panel/v3/internal/database/dbtest"
+	"github.com/hcmteam/h-panel/v3/internal/web/global"
 )
 
 /*

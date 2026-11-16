@@ -16,7 +16,7 @@ question it already answers.
 
 3x-ui is an open-source web control panel for managing Xray-core servers.
 
-- Backend: Go 1.27, module `github.com/mhsanaei/3x-ui/v3`, Gin and GORM.
+- Backend: Go 1.27, module `github.com/hcmteam/h-panel/v3`, Gin and GORM.
 - It runs Xray-core as a managed child process (`internal/xray/process.go`) and
   imports `github.com/xtls/xray-core` for config types and the gRPC
   stats/handler/router API. The release the panel BUNDLES is pinned in
@@ -169,7 +169,7 @@ test that cannot fail is invisible to CI. `make verify` is the local gate.
 
 ## Support facts reporters get wrong
 
-- Linux install: `bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)`
+- Linux install: `bash <(curl -Ls https://raw.githubusercontent.com/hcmteam/h-panel/main/install.sh)`
 - Install generates a RANDOM username, password and web base path — never
   admin/admin. The `x-ui` menu on the server shows or resets them.
 - The installer service environment file is DISTRO-DEPENDENT:

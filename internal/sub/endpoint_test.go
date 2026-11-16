@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
 )
 
 // N1 — externalProxyToEndpoint maps the scalar fields and carries the source

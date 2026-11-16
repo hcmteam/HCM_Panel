@@ -9,8 +9,8 @@ import (
 
 	"github.com/xtls/xray-core/infra/conf"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/database"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
 )
 
 func fallbackTestDecryption() string {

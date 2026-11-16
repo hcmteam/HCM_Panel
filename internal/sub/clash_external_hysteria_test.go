@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
 )
 
 func TestClashExternalHysteriaPreservesStreamOptions(t *testing.T) {

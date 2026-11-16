@@ -9,7 +9,7 @@ import (
 
 	"github.com/op/go-logging"
 
-	xuilogger "github.com/mhsanaei/3x-ui/v3/internal/logger"
+	xuilogger "github.com/hcmteam/h-panel/v3/internal/logger"
 )
 
 func TestMain(m *testing.M) {

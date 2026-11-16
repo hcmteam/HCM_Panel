@@ -19,8 +19,8 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/status"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/tuic"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/tuic"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 type delayedTuicRouting struct {

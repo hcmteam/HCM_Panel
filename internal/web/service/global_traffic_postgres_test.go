@@ -6,7 +6,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/testpg"
+	"github.com/hcmteam/h-panel/v3/internal/testpg"
 )
 
 func initGlobalHeartbeatDB(t *testing.T) *gorm.DB {

@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
+	"github.com/hcmteam/h-panel/v3/internal/util/common"
 
 	"github.com/xtls/xray-core/common/platform"
 	"github.com/xtls/xray-core/infra/conf"
