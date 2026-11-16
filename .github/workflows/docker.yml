@@ -118,9 +118,9 @@ jobs:
             [ -z "$tag" ] || manifest_args+=(-t "$tag")
           done < <(jq -r '.tags[]' <<< "$DOCKER_METADATA_OUTPUT_JSON")
 
-          docker buildx imagetools create "${manifest_args[@]}" \\
-            "$IMAGE:build-$SHA-amd64" \\
-            "$IMAGE:build-$SHA-arm64" \\
-            "$IMAGE:build-$SHA-armv7" \\
-            "$IMAGE:build-$SHA-armv6" \\
+          docker buildx imagetools create "${manifest_args[@]}" \
+            "$IMAGE:build-$SHA-amd64" \
+            "$IMAGE:build-$SHA-arm64" \
+            "$IMAGE:build-$SHA-armv7" \
+            "$IMAGE:build-$SHA-armv6" \
             "$IMAGE:build-$SHA-386"
