@@ -47,7 +47,7 @@ describe('buildDockerRun', () => {
     expect(cmd).toContain('XUI_ENABLE_FAIL2BAN=false');
     expect(cmd).toContain('XUI_PORT=8443');
     expect(cmd).toContain('XUI_INIT_WEB_BASE_PATH=/panel');
-    expect(cmd).toContain('ghcr.io/mhsanaei/3x-ui:latest');
+    expect(cmd).toContain('ghcr.io/hcmteam/h-panel:latest');
     expect(cmd).toContain('-v $PWD/db/:/etc/x-ui/');
   });
 
@@ -61,7 +61,7 @@ describe('buildDockerRun', () => {
 describe('buildDockerCompose', () => {
   it('produces valid-looking compose with the image and volumes', () => {
     const yaml = buildDockerCompose({ ...base, panelPort: '2096' });
-    expect(yaml).toContain('image: ghcr.io/mhsanaei/3x-ui:latest');
+    expect(yaml).toContain('image: ghcr.io/hcmteam/h-panel:latest');
     expect(yaml).toContain('network_mode: host');
     expect(yaml).toContain("XUI_PORT: '2096'");
     expect(yaml).toContain('- ./db/:/etc/x-ui/');
