@@ -186,6 +186,7 @@ export default function DnsTab({ templateSettings, setTemplateSettings }: DnsTab
   }
   function clearAllServers() {
     modal.confirm({
+      rootClassName: 'xray-dialog',
       title: t('pages.xray.dns.clearAllTitle'),
       content: t('pages.xray.dns.clearAllConfirm'),
       okText: t('delete'),

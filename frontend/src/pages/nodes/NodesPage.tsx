@@ -33,6 +33,7 @@ import { useNodeMutations } from '@/api/queries/useNodeMutations';
 import AppSidebar from '@/layouts/AppSidebar';
 import NodeList from './NodeList';
 import NodeFormModal from './NodeFormModal';
+import './NodesPage.css';
 import { setMessageInstance } from '@/utils/messageBus';
 import { HttpUtil } from '@/utils';
 import type { PanelUpdateInfo } from '../index/PanelUpdateModal';
@@ -313,6 +314,11 @@ export default function NodesPage() {
               ) : (
                 <Row gutter={[isMobile ? 8 : 16, isMobile ? 8 : 12]}>
                   <Col span={24}>
+                    <header className="nodes-page-heading">
+                      <h1>{t('menu.nodes')}</h1>
+                    </header>
+                  </Col>
+                  <Col span={24}>
                     <Card size="small" hoverable className="summary-card">
                       <Row gutter={[16, isMobile ? 16 : 12]}>
                         <Col xs={12} sm={12} md={6}>
@@ -393,6 +399,7 @@ export default function NodesPage() {
         />
 
         <Modal
+          rootClassName="nodes-mtls-modal"
           open={mtlsOpen}
           title={t('pages.nodes.mtls.title')}
           footer={null}

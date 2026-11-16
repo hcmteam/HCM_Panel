@@ -373,6 +373,7 @@ export default function OutboundFormModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName="xray-dialog"
         open={open}
         title={title}
         okText={okText}

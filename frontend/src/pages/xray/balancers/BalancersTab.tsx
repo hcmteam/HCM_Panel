@@ -295,6 +295,7 @@ export default function BalancersTab({
       ? planBalancerDeletion(templateSettings, idx)
       : { rules: [], balancers: [], observatory: false, burst: false };
     modal.confirm({
+      rootClassName: 'xray-dialog',
       title: `${t('delete')} ${t('pages.xray.Balancers')} #${idx + 1}?`,
       content: <DeletionImpactList impact={impact} />,
       okText: t('delete'),

@@ -76,6 +76,7 @@ export default function DnsPresetsModal({ open, onClose, onInstall }: DnsPresets
 
   return (
     <Modal
+      rootClassName="xray-dialog"
       open={open}
       title={t('pages.xray.dns.dnsPresetTitle')}
       footer={null}

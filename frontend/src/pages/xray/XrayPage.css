@@ -4,6 +4,178 @@
   color: var(--ant-color-primary);
 }
 
+.xray-page .xray-heading {
+  margin: 0 0 var(--ds-space-2, 8px);
+}
+
+.xray-page .xray-heading h1 {
+  margin: 0;
+  color: var(--ds-text, var(--ant-color-text));
+  font-family: var(--ds-type-family, inherit);
+  font-size: var(--ds-type-size-xl, 20px);
+  font-weight: var(--ds-type-weight-semibold, 600);
+  line-height: var(--ds-type-line-height-tight, 1.25);
+}
+
+.xray-page .xray-toolbar-card,
+.xray-page .xray-content-card {
+  overflow: hidden;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.xray-page .xray-toolbar-card .ant-card-body {
+  padding: var(--ds-space-4, 16px);
+}
+
+.xray-page .xray-content-card .ant-card-body {
+  padding: var(--ds-space-4, 16px) var(--ds-space-5, 20px);
+}
+
+.xray-page .header-row {
+  row-gap: var(--ds-space-3, 12px);
+}
+
+.xray-page .header-actions,
+.xray-page .header-info {
+  min-width: 0;
+}
+
+.xray-page .header-actions .ant-space {
+  flex-wrap: wrap;
+}
+
+.xray-page .header-info .ant-alert,
+.xray-page .ant-alert {
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.xray-page .ant-tabs-nav {
+  margin-bottom: var(--ds-space-4, 16px);
+}
+
+.xray-page .ant-tabs-nav::before {
+  border-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.xray-page .ant-tabs-tab {
+  border-radius: var(--ds-radius-sm, 8px) var(--ds-radius-sm, 8px) 0 0;
+  transition:
+    color var(--ds-transition-standard, 200ms ease),
+    background-color var(--ds-transition-standard, 200ms ease);
+}
+
+.xray-page .ant-tabs-tab:hover {
+  background: var(--ds-glass, var(--ant-color-fill-quaternary));
+}
+
+.xray-page .ant-tabs-tab:focus-visible {
+  outline: 2px solid var(--ds-accent, var(--ant-color-primary));
+  outline-offset: 2px;
+}
+
+.xray-page .ant-form-item-label > label {
+  color: var(--ds-text, var(--ant-color-text));
+  font-weight: var(--ds-type-weight-medium, 500);
+}
+
+.xray-page .ant-input,
+.xray-page .ant-input-number,
+.xray-page .ant-input-affix-wrapper,
+.xray-page .ant-select-selector {
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.xray-page .ant-table-wrapper,
+.xray-page .ant-table-container {
+  border-radius: var(--ds-radius-md, 12px);
+}
+
+.xray-page .ant-table-thead > tr > th {
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+  background: var(--ds-glass-strong, var(--ant-color-fill-quaternary));
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.xray-page .ant-table-tbody > tr > td {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.xray-page .ant-table-tbody > tr:hover > td {
+  background: var(--ds-glass, var(--ant-color-fill-quaternary));
+}
+
+.xray-page .outbound-card,
+.xray-page .rule-card,
+.xray-page .format-settings {
+  border-color: var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-sm, 8px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.06));
+}
+
+.xray-page .rule-card {
+  transition:
+    box-shadow var(--ds-transition-standard, 200ms ease),
+    border-color var(--ds-transition-standard, 200ms ease);
+}
+
+.xray-page .advanced-meta h4 {
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: var(--ds-type-size-lg, 16px);
+  font-weight: var(--ds-type-weight-semibold, 600);
+}
+
+.xray-page .advanced-meta p {
+  color: var(--ds-text-muted, var(--ant-color-text-tertiary));
+}
+
+.xray-page .cm-editor {
+  overflow: hidden;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-md, 12px);
+  box-shadow: var(--ds-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.06));
+}
+
+.xray-page .cm-editor:focus-within {
+  border-color: var(--ds-accent, var(--ant-color-primary));
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--ds-accent, var(--ant-color-primary)) 18%, transparent);
+}
+
+.xray-page .ant-result {
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+}
+
+/* Xray dialogs render in a portal outside .xray-page, so use their dedicated
+   root class to keep the glass treatment isolated from other pages. */
+.xray-dialog .ant-modal-content {
+  overflow: hidden;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass-strong, var(--ant-color-bg-elevated));
+  box-shadow: var(--ds-shadow-glass, 0 12px 32px rgba(0, 0, 0, 0.2));
+  -webkit-backdrop-filter: blur(var(--ds-blur-standard, 16px));
+  backdrop-filter: blur(var(--ds-blur-standard, 16px));
+}
+
+.xray-dialog .ant-modal-header,
+.xray-dialog .ant-modal-footer {
+  background: transparent;
+}
+
+.xray-dialog .ant-modal-header {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.xray-dialog .ant-modal-footer {
+  border-top-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
 .xray-page .restart-result {
   max-width: 480px;
   white-space: pre-wrap;
@@ -18,4 +190,39 @@
 .xray-page .advanced-meta p {
   margin: 0;
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .xray-page .content-area {
+    padding: var(--ds-space-3, 12px);
+  }
+
+  .xray-page .xray-toolbar-card .ant-card-body,
+  .xray-page .xray-content-card .ant-card-body {
+    padding: var(--ds-space-3, 12px);
+  }
+
+  .xray-page .header-actions .ant-space {
+    display: flex;
+    width: 100%;
+  }
+
+  .xray-page .header-actions .ant-btn {
+    flex: 1 1 auto;
+  }
+
+  .xray-page .ant-tabs-nav-list {
+    flex-wrap: nowrap;
+  }
+
+  .xray-page .ant-tabs-tab {
+    padding-inline: var(--ds-space-3, 12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xray-page .ant-tabs-tab,
+  .xray-page .rule-card {
+    transition: none;
+  }
 }

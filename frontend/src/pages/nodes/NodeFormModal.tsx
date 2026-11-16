@@ -244,6 +244,7 @@ export default function NodeFormModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName="nodes-form-modal"
         open={open}
         title={title}
         confirmLoading={submitting}

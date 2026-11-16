@@ -1632,6 +1632,7 @@ export default function ClientsPage() {
 
                   <Col span={24}>
                     <Card
+                      className="clients-list-shell"
                       size="small"
                       hoverable
                       title={

@@ -8,9 +8,13 @@
    the whole client form on the active panel theme, including header/footer. */
 .ant-modal.client-form-modal > .ant-modal-container,
 .ant-modal-root:has(.client-form-modal) .ant-modal-container {
-  background: var(--surf, var(--ant-color-bg-elevated)) !important;
+  background: var(--ds-glass-strong, var(--surf, var(--ant-color-bg-elevated))) !important;
   color: var(--tx, var(--ant-color-text)) !important;
-  border: 1px solid var(--ln, var(--ant-color-border)) !important;
+  border: 1px solid var(--ds-border, var(--ln, var(--ant-color-border))) !important;
+  border-radius: var(--ds-radius-lg, 16px);
+  box-shadow: var(--ds-shadow-glass, var(--ant-box-shadow));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
 }
 
 .ant-modal.client-form-modal > .ant-modal-container .ant-modal-header,
@@ -71,9 +75,9 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px 14px;
   padding: 12px;
-  border: 1px solid var(--ant-color-border-secondary);
-  border-radius: 12px;
-  background: var(--ant-color-fill-quaternary);
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-md, 12px);
+  background: var(--ds-glass, var(--ant-color-fill-quaternary));
 }
 .client-plan-preset-summary > b {
   grid-column: 1 / -1;
@@ -87,5 +91,13 @@
   .client-plan-preset-summary {
     grid-template-columns: minmax(0, 1fr);
     gap: 5px;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .ant-modal.client-form-modal > .ant-modal-container,
+  .ant-modal-root:has(.client-form-modal) .ant-modal-container {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }

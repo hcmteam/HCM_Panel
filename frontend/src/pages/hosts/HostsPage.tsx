@@ -25,6 +25,7 @@ import { setMessageInstance } from '@/utils/messageBus';
 import type { BulkAddHostValues } from '@/schemas/api/host';
 import HostList, { sortHosts } from './HostList';
 import HostFormModal from './HostFormModal';
+import './HostsPage.css';
 
 export default function HostsPage() {
   const { t } = useTranslation();
@@ -196,6 +197,11 @@ export default function HostsPage() {
                 />
               ) : (
                 <Row gutter={[isMobile ? 8 : 16, isMobile ? 8 : 12]}>
+                  <Col span={24}>
+                    <header className="hosts-page-heading">
+                      <h1>{t('menu.hosts')}</h1>
+                    </header>
+                  </Col>
                   <Col span={24}>
                     <Card size="small" hoverable className="summary-card">
                       <Row gutter={[16, 12]}>

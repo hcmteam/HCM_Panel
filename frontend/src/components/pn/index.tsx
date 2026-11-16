@@ -109,6 +109,7 @@ export function ResponsiveSheet({
   children,
   footer,
   width = 640,
+  rootClassName,
 }: {
   open: boolean;
   title: ReactNode;
@@ -116,6 +117,7 @@ export function ResponsiveSheet({
   children: ReactNode;
   footer?: ReactNode;
   width?: number;
+  rootClassName?: string;
 }) {
   const [mobile, setMobile] = useState(
     () => typeof window !== 'undefined' && window.matchMedia('(max-width: 899px)').matches,
@@ -130,6 +132,7 @@ export function ResponsiveSheet({
   if (mobile)
     return (
       <Drawer
+        rootClassName={rootClassName}
         title={title}
         open={open}
         onClose={onClose}
@@ -143,6 +146,7 @@ export function ResponsiveSheet({
     );
   return (
     <Modal
+      rootClassName={rootClassName}
       className="pn-responsive-modal"
       title={title}
       open={open}

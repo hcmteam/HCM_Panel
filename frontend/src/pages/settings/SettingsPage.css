@@ -1,9 +1,164 @@
 .settings-page .conf-alert {
-  margin-bottom: 10px;
+  margin-bottom: var(--ds-space-4, 16px);
+  border-radius: var(--ds-radius-md, 12px);
 }
 
-.ldap-no-inbounds {
+.settings-page .settings-heading {
+  margin: 0 0 var(--ds-space-4, 16px);
+}
+
+.settings-page .settings-heading h1 {
+  margin: 0;
+  color: var(--ds-text, var(--ant-color-text));
+  font-family: var(--ds-type-family, inherit);
+  font-size: var(--ds-type-size-xl, 20px);
+  font-weight: var(--ds-type-weight-semibold, 600);
+  line-height: var(--ds-type-line-height-tight, 1.25);
+}
+
+.settings-page .settings-toolbar-card,
+.settings-page .settings-content-card {
+  overflow: hidden;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.settings-page .settings-toolbar-card .ant-card-body {
+  padding: var(--ds-space-4, 16px);
+}
+
+.settings-page .settings-content-card .ant-card-body {
+  padding: var(--ds-space-4, 16px) var(--ds-space-5, 20px);
+}
+
+.settings-page .header-row {
+  row-gap: var(--ds-space-3, 12px);
+}
+
+.settings-page .header-actions,
+.settings-page .header-info {
+  min-width: 0;
+}
+
+.settings-page .header-actions .ant-space {
+  flex-wrap: wrap;
+}
+
+.settings-page .header-info .ant-alert {
+  width: 100%;
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.settings-page .ant-tabs-nav {
+  margin-bottom: var(--ds-space-4, 16px);
+}
+
+.settings-page .ant-tabs-nav::before {
+  border-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.settings-page .ant-tabs-tab {
+  border-radius: var(--ds-radius-sm, 8px) var(--ds-radius-sm, 8px) 0 0;
+  transition:
+    color var(--ds-transition-standard, 200ms ease),
+    background-color var(--ds-transition-standard, 200ms ease);
+}
+
+.settings-page .ant-tabs-tab:hover {
+  background: var(--ds-glass, var(--ant-color-fill-quaternary));
+}
+
+.settings-page .ant-tabs-tab:focus-visible {
+  outline: 2px solid var(--ds-accent, var(--ant-color-primary));
+  outline-offset: 2px;
+}
+
+.settings-page .setting-list-item {
+  gap: var(--ds-space-4, 16px);
+  transition: background-color var(--ds-transition-standard, 200ms ease);
+}
+
+.settings-page .setting-list-title {
+  color: var(--ds-text, var(--ant-color-text));
+  font-weight: var(--ds-type-weight-medium, 500);
+}
+
+.settings-page .setting-list-description {
+  color: var(--ds-text-muted, var(--ant-color-text-tertiary));
+  font-size: var(--ds-type-size-sm, 12px);
+}
+
+.settings-page .ant-form-item-label > label {
+  color: var(--ds-text, var(--ant-color-text));
+  font-weight: var(--ds-type-weight-medium, 500);
+}
+
+.settings-page .ant-input,
+.settings-page .ant-input-number,
+.settings-page .ant-input-affix-wrapper,
+.settings-page .ant-select-selector {
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.settings-page .api-token-section {
+  padding: var(--ds-space-3, 12px) 0 var(--ds-space-4, 16px);
+}
+
+.settings-page .api-token-row {
+  border-color: var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-sm, 8px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+}
+
+.settings-page .api-token-value {
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-xs, 4px);
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.settings-page .ldap-no-inbounds {
   margin-top: 6px;
   color: var(--ant-color-text-tertiary);
   font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .settings-page .settings-heading {
+    margin-bottom: var(--ds-space-3, 12px);
+  }
+
+  .settings-page .settings-toolbar-card .ant-card-body,
+  .settings-page .settings-content-card .ant-card-body {
+    padding: var(--ds-space-3, 12px);
+  }
+
+  .settings-page .header-actions .ant-space {
+    display: flex;
+    width: 100%;
+  }
+
+  .settings-page .header-actions .ant-btn {
+    flex: 1 1 auto;
+  }
+
+  .settings-page .ant-tabs-nav-list {
+    flex-wrap: nowrap;
+  }
+
+  .settings-page .ant-tabs-tab {
+    padding-inline: var(--ds-space-3, 12px);
+  }
+
+  .settings-page .setting-list-item {
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-page .ant-tabs-tab,
+  .settings-page .setting-list-item {
+    transition: none;
+  }
 }

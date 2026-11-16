@@ -370,7 +370,13 @@ export default function WarpModal({
   return (
     <>
       {messageContextHolder}
-      <Modal open={open} title="Cloudflare WARP" footer={null} onCancel={onClose}>
+      <Modal
+        rootClassName="xray-dialog"
+        open={open}
+        title="Cloudflare WARP"
+        footer={null}
+        onCancel={onClose}
+      >
         <FormProvider {...methods}>
           {!hasWarp ? (
             <Button

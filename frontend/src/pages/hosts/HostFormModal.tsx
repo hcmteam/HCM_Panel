@@ -237,6 +237,7 @@ export default function HostFormModal({
 
   return (
     <Modal
+      rootClassName="hosts-form-modal"
       open={open}
       title={t(mode === 'add' ? 'pages.hosts.addHost' : 'pages.hosts.editHost')}
       onOk={methods.handleSubmit(onFinish)}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, waitFor, within } from 'storybook/test';
-import { Button } from 'antd';
+import { Button, ConfigProvider } from 'antd';
 
 import PromptModal from './PromptModal';
 
@@ -96,7 +96,11 @@ export const Input: Story = {
 
 export const Textarea: Story = {
   args: placeholderArgs,
-  render: () => <TextareaDemo />,
+  render: () => (
+    <ConfigProvider theme={{ token: { motion: false } }}>
+      <TextareaDemo />
+    </ConfigProvider>
+  ),
   play: async ({ canvas, canvasElement, userEvent }) => {
     const body = within(canvasElement.ownerDocument.body);
     await userEvent.click(canvas.getByRole('button', { name: 'Edit note' }));

@@ -252,6 +252,9 @@ export default function SettingsPage() {
                 <div className="loading-spacer" />
               ) : (
                 <>
+                  <div className="settings-heading">
+                    <h1>{t('menu.settings')}</h1>
+                  </div>
                   {confAlerts.length > 0 && alertVisible && (
                     <Alert
                       type="error"
@@ -274,7 +277,7 @@ export default function SettingsPage() {
 
                   <Row gutter={[isMobile ? 8 : 16, isMobile ? 0 : 12]}>
                     <Col span={24}>
-                      <Card hoverable>
+                      <Card className="settings-toolbar-card" hoverable>
                         <Row className="header-row">
                           <Col xs={24} sm={10} className="header-actions">
                             <Space>
@@ -300,7 +303,9 @@ export default function SettingsPage() {
                     </Col>
 
                     <Col span={24}>
-                      <Card hoverable>{categoryBody}</Card>
+                      <Card className="settings-content-card" hoverable>
+                        {categoryBody}
+                      </Card>
                     </Col>
                   </Row>
                 </>

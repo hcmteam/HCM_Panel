@@ -34,6 +34,7 @@ import {
   type ExternalLink,
   type ExternalLinkInput,
 } from '@/hooks/useClients';
+import './PlansPage.css';
 
 type PlanDraft = Omit<PlanModel, 'id' | 'clientsCount'>;
 type ClientDraft = {
@@ -994,6 +995,7 @@ function PlansPageContent() {
           onOpenChange={setEditingPlanClientOpen}
         />
         <ResponsiveSheet
+          rootClassName="plans-editor-sheet"
           open={editor !== null}
           title={
             editor === 'edit'
@@ -1068,6 +1070,7 @@ function PlansPageContent() {
           </Form>
         </ResponsiveSheet>
         <ResponsiveSheet
+          rootClassName="plans-delete-sheet"
           open={deleteOpen}
           title={label('plans.deleteTitle', 'Delete plan?')}
           onClose={() => setDeleteOpen(false)}
@@ -1085,6 +1088,7 @@ function PlansPageContent() {
           </p>
         </ResponsiveSheet>
         <ResponsiveSheet
+          rootClassName="plans-client-sheet"
           open={clientOpen}
           title={label('plans.applyExistingClient', 'Apply plan to existing client')}
           onClose={() => setClientOpen(false)}
@@ -1174,6 +1178,7 @@ function PlansPageContent() {
         )}
       </div>
       <ResponsiveSheet
+        rootClassName="plans-editor-sheet"
         open={editor !== null}
         title={
           editor === 'edit'
@@ -1245,7 +1250,7 @@ function PlansPageContent() {
 
 export default function PlansPage() {
   return (
-    <Layout className="index-page">
+    <Layout className="plans-page">
       <AppSidebar />
       <Layout className="content-shell">
         <Layout.Content className="content-area">

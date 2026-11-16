@@ -1,0 +1,202 @@
+.groups-page .groups-page-heading {
+  margin-bottom: 0;
+}
+
+.groups-page .groups-page-heading h1 {
+  margin: 0;
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.groups-page .summary-card,
+.groups-page .groups-list-shell {
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.08));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.groups-page .summary-card .ant-statistic-title {
+  color: var(--ds-text-muted, var(--ant-color-text-secondary));
+  font-size: 12px;
+}
+
+.groups-page .summary-card .ant-statistic-content {
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: clamp(18px, 2vw, 23px);
+  font-variant-numeric: tabular-nums;
+}
+
+.groups-page .groups-list-shell .ant-card-head,
+.groups-page .groups-list-shell .ant-card-body {
+  background: transparent;
+}
+
+.groups-page .card-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 2px;
+}
+
+.groups-page .card-toolbar .ant-btn {
+  min-height: 34px;
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.groups-page .groups-table .ant-table,
+.groups-page .groups-table .ant-table-container {
+  background: transparent;
+}
+
+.groups-page .groups-table .ant-table-thead > tr > th {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+  background: var(--ds-glass-strong, var(--ant-color-fill-tertiary));
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.groups-page .groups-table .ant-table-tbody > tr > td {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.groups-page .groups-table .ant-table-tbody > tr:hover > td {
+  background: color-mix(in srgb, var(--ds-accent, var(--ant-color-primary)) 7%, transparent);
+}
+
+.groups-page .groups-table .ant-table-cell .ant-tag {
+  border-radius: var(--ds-radius-pill, 999px);
+}
+
+.groups-page .card-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 12px;
+  color: var(--ds-text-muted, var(--ant-color-text-secondary));
+  text-align: center;
+}
+
+.groups-create-modal .ant-modal-container,
+.groups-rename-modal .ant-modal-container,
+.groups-sublinks-modal .ant-modal-container,
+.groups-bulk-adjust-modal .ant-modal-container,
+.groups-add-members-modal .ant-modal-container,
+.groups-remove-members-modal .ant-modal-container {
+  border: 1px solid var(--ds-border, var(--ant-color-border));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass-strong, var(--ant-color-bg-elevated));
+  box-shadow: var(--ds-shadow-glass, var(--ant-box-shadow));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.groups-create-modal .ant-modal-header,
+.groups-create-modal .ant-modal-body,
+.groups-create-modal .ant-modal-footer,
+.groups-rename-modal .ant-modal-header,
+.groups-rename-modal .ant-modal-body,
+.groups-rename-modal .ant-modal-footer,
+.groups-sublinks-modal .ant-modal-header,
+.groups-sublinks-modal .ant-modal-body,
+.groups-sublinks-modal .ant-modal-footer,
+.groups-bulk-adjust-modal .ant-modal-header,
+.groups-bulk-adjust-modal .ant-modal-body,
+.groups-bulk-adjust-modal .ant-modal-footer,
+.groups-add-members-modal .ant-modal-header,
+.groups-add-members-modal .ant-modal-body,
+.groups-add-members-modal .ant-modal-footer,
+.groups-remove-members-modal .ant-modal-header,
+.groups-remove-members-modal .ant-modal-body,
+.groups-remove-members-modal .ant-modal-footer {
+  background: transparent;
+}
+
+.groups-create-modal .ant-modal-header,
+.groups-rename-modal .ant-modal-header,
+.groups-sublinks-modal .ant-modal-header,
+.groups-bulk-adjust-modal .ant-modal-header,
+.groups-add-members-modal .ant-modal-header,
+.groups-remove-members-modal .ant-modal-header {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.groups-create-modal .ant-modal-footer,
+.groups-rename-modal .ant-modal-footer,
+.groups-sublinks-modal .ant-modal-footer,
+.groups-bulk-adjust-modal .ant-modal-footer,
+.groups-add-members-modal .ant-modal-footer,
+.groups-remove-members-modal .ant-modal-footer {
+  border-top-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.groups-add-members-modal .ant-table-wrapper,
+.groups-remove-members-modal .ant-table-wrapper,
+.groups-sublinks-modal .ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.groups-add-members-modal .ant-table,
+.groups-add-members-modal .ant-table-container,
+.groups-remove-members-modal .ant-table,
+.groups-remove-members-modal .ant-table-container,
+.groups-sublinks-modal .ant-table,
+.groups-sublinks-modal .ant-table-container {
+  background: transparent;
+}
+
+.groups-add-members-modal .ant-table-thead > tr > th,
+.groups-remove-members-modal .ant-table-thead > tr > th,
+.groups-sublinks-modal .ant-table-thead > tr > th {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+  background: var(--ds-glass-strong, var(--ant-color-fill-tertiary));
+}
+
+.groups-add-members-modal .ant-table-tbody > tr > td,
+.groups-remove-members-modal .ant-table-tbody > tr > td,
+.groups-sublinks-modal .ant-table-tbody > tr > td {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+@media (max-width: 767px) {
+  .groups-page .groups-page-heading h1 {
+    font-size: 20px;
+  }
+
+  .groups-page .summary-card,
+  .groups-page .groups-list-shell {
+    border-radius: var(--ds-radius-md, 12px);
+  }
+
+  .groups-page .groups-table .ant-table {
+    font-size: 12px;
+  }
+
+  .groups-page .card-toolbar .ant-btn {
+    min-width: 36px;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .groups-page .summary-card,
+  .groups-page .groups-list-shell,
+  .groups-create-modal .ant-modal-container,
+  .groups-rename-modal .ant-modal-container,
+  .groups-sublinks-modal .ant-modal-container,
+  .groups-bulk-adjust-modal .ant-modal-container,
+  .groups-add-members-modal .ant-modal-container,
+  .groups-remove-members-modal .ant-modal-container {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--ds-glass-strong, var(--ant-color-bg-container));
+  }
+}

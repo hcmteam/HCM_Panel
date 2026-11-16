@@ -589,7 +589,7 @@ export default function NodeList({
   );
 
   return (
-    <Card size="small" hoverable>
+    <Card size="small" hoverable className="nodes-list-shell">
       <div className="toolbar">
         <Button type="primary" icon={<PlusOutlined aria-hidden />} onClick={onAdd}>
           {t('pages.nodes.addNode')}
@@ -741,6 +741,7 @@ export default function NodeList({
           </div>
 
           <Modal
+            rootClassName="nodes-stats-modal"
             open={!!statsNode}
             footer={null}
             width={360}

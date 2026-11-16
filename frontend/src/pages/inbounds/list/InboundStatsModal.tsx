@@ -53,6 +53,7 @@ export default function InboundStatsModal({
   return (
     <Modal
       open={open}
+      rootClassName="inbound-stats-modal"
       footer={null}
       width={360}
       centered
