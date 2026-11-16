@@ -46,6 +46,7 @@ case $PLATFORM in
         ;;
 esac
 set -a
+# shellcheck source=build/dependencies.env
 . /app/build/dependencies.env
 set +a
 MTG_MULTI_VER=$MTG_MULTI_VERSION
@@ -71,10 +72,10 @@ tar -xzf "${MTG_PKG}.tar.gz"
 mv "${MTG_PKG}/mtg-multi" "${MTG_BIN}"
 rm -rf "${MTG_PKG}" "${MTG_PKG}.tar.gz"
 chmod +x "${MTG_BIN}"
-curl -sfLRO https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/${GEO_RULES_VERSION}/geoip.dat
-curl -sfLRO https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/${GEO_RULES_VERSION}/geosite.dat
-curl -sfLRo geoip_IR.dat https://github.com/chocolate4u/Iran-v2ray-rules/releases/download/${GEO_IR_VERSION}/geoip.dat
-curl -sfLRo geosite_IR.dat https://github.com/chocolate4u/Iran-v2ray-rules/releases/download/${GEO_IR_VERSION}/geosite.dat
-curl -sfLRo geoip_RU.dat https://github.com/runetfreedom/russia-v2ray-rules-dat/releases/download/${GEO_RU_VERSION}/geoip.dat
-curl -sfLRo geosite_RU.dat https://github.com/runetfreedom/russia-v2ray-rules-dat/releases/download/${GEO_RU_VERSION}/geosite.dat
+curl -sfLRO "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/${GEO_RULES_VERSION}/geoip.dat"
+curl -sfLRO "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/${GEO_RULES_VERSION}/geosite.dat"
+curl -sfLRo geoip_IR.dat "https://github.com/chocolate4u/Iran-v2ray-rules/releases/download/${GEO_IR_VERSION}/geoip.dat"
+curl -sfLRo geosite_IR.dat "https://github.com/chocolate4u/Iran-v2ray-rules/releases/download/${GEO_IR_VERSION}/geosite.dat"
+curl -sfLRo geoip_RU.dat "https://github.com/runetfreedom/russia-v2ray-rules-dat/releases/download/${GEO_RU_VERSION}/geoip.dat"
+curl -sfLRo geosite_RU.dat "https://github.com/runetfreedom/russia-v2ray-rules-dat/releases/download/${GEO_RU_VERSION}/geosite.dat"
 cd ../../
