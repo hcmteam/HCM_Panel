@@ -16,8 +16,8 @@ import (
 	"github.com/xtls/xray-core/core"
 	"github.com/xtls/xray-core/infra/conf"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/tuic"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/tuic"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 func isolationRelay(t *testing.T, id int, email string) xray.InboundConfig {

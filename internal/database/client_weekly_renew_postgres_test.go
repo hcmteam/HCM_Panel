@@ -11,8 +11,8 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 func TestClientWeeklyRenewMigration_Postgres(t *testing.T) {

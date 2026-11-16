@@ -3,7 +3,7 @@ extensions:
       pack: codeql/go-all
       extensible: barrierModel
     data:
-      - ["github.com/mhsanaei/3x-ui/v3/internal/web/service", "", false, "SanitizePublicHTTPURL", "", "", "ReturnValue[0]", "request-forgery", "manual"]
+      - ["github.com/hcmteam/h-panel/v3/internal/web/service", "", false, "SanitizePublicHTTPURL", "", "", "ReturnValue[0]", "request-forgery", "manual"]
   - addsTo:
       pack: codeql/go-all
       extensible: barrierGuardModel

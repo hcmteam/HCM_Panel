@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/config"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
-	wgutil "github.com/mhsanaei/3x-ui/v3/internal/util/wireguard"
+	"github.com/hcmteam/h-panel/v3/internal/config"
+	"github.com/hcmteam/h-panel/v3/internal/logger"
+	"github.com/hcmteam/h-panel/v3/internal/util/common"
+	wgutil "github.com/hcmteam/h-panel/v3/internal/util/wireguard"
 
 	"github.com/xtls/xray-core/app/proxyman"
 	"github.com/xtls/xray-core/app/proxyman/command"

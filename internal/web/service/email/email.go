@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/web/service"
+	"github.com/hcmteam/h-panel/v3/internal/web/service"
 )
 
 // EmailService sends email notifications via SMTP.

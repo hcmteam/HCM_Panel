@@ -13,11 +13,11 @@ import (
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/dbtest"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/locale"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/service/panel"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/session"
+	"github.com/hcmteam/h-panel/v3/internal/database/dbtest"
+	"github.com/hcmteam/h-panel/v3/internal/logger"
+	"github.com/hcmteam/h-panel/v3/internal/web/locale"
+	"github.com/hcmteam/h-panel/v3/internal/web/service/panel"
+	"github.com/hcmteam/h-panel/v3/internal/web/session"
 )
 
 func TestLoginCSRFRejectionLogsPeerIPNotForwardedHeader(t *testing.T) {

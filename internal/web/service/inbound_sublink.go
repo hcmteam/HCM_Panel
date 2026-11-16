@@ -3,8 +3,8 @@ package service
 import (
 	"sync"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/util/common"
 )
 
 type SubLinkProvider interface {

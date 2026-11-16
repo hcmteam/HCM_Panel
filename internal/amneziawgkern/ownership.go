@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	wgutil "github.com/mhsanaei/3x-ui/v3/internal/util/wireguard"
+	wgutil "github.com/hcmteam/h-panel/v3/internal/util/wireguard"
 )
 
 func ownershipMarker(name string) string {

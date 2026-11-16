@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
+	"github.com/hcmteam/h-panel/v3/internal/logger"
 
 	"github.com/gin-gonic/gin"
 	"github.com/nicksnyder/go-i18n/v2/i18n"

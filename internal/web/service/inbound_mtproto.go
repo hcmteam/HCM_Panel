@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/mtproto"
+	"github.com/hcmteam/h-panel/v3/internal/database"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/logger"
+	"github.com/hcmteam/h-panel/v3/internal/mtproto"
 )
 
 // DesiredMtprotoInstances derives the mtg sidecar configs this panel should be

@@ -13,12 +13,12 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/dbtest"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/entity"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/locale"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/database"
+	"github.com/hcmteam/h-panel/v3/internal/database/dbtest"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/web/entity"
+	"github.com/hcmteam/h-panel/v3/internal/web/locale"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 func seedLegacyDotClient(t *testing.T, email string) (*gin.Engine, model.ClientRecord, model.Inbound) {

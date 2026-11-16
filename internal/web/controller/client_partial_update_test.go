@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/dbtest"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/service"
+	"github.com/hcmteam/h-panel/v3/internal/database"
+	"github.com/hcmteam/h-panel/v3/internal/database/dbtest"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/web/service"
 )
 
 // A handler that binds the body straight into model.Client turns every omitted

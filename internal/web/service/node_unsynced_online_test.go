@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/runtime"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/database"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/web/runtime"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 func useOnlineTestProcess(t *testing.T) *xray.Process {

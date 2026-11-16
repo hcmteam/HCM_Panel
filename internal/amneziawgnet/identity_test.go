@@ -5,8 +5,8 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/amneziawg"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/wireguard"
+	"github.com/hcmteam/h-panel/v3/internal/amneziawg"
+	"github.com/hcmteam/h-panel/v3/internal/util/wireguard"
 )
 
 // TestPeerIndexLookupMatchesDeviceAllowedIPs catches Lookup attributing a

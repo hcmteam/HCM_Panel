@@ -12,8 +12,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/eventbus"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
+	"github.com/hcmteam/h-panel/v3/internal/eventbus"
+	"github.com/hcmteam/h-panel/v3/internal/logger"
 )
 
 type xrayMetricsState struct {

@@ -7,8 +7,8 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/crypto"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/util/crypto"
 )
 
 func TestInitDB_GeneratesPerPanelSubscriptionPaths(t *testing.T) {

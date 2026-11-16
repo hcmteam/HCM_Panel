@@ -11,7 +11,7 @@ export interface InstallOptions {
   webBasePath: string;
 }
 
-const REPO_RAW = 'https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh';
+const REPO_RAW = 'https://raw.githubusercontent.com/hcmteam/h-panel/main/install.sh';
 const IMAGE = 'ghcr.io/hcmteam/h-panel:latest';
 
 function isLatest(version: string): boolean {

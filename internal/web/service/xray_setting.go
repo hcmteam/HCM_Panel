@@ -13,10 +13,10 @@ import (
 
 	"github.com/robfig/cron/v3"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/amneziawg"
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/amneziawg"
+	"github.com/hcmteam/h-panel/v3/internal/database"
+	"github.com/hcmteam/h-panel/v3/internal/util/common"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 // XraySettingService provides business logic for Xray configuration management.

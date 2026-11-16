@@ -8,7 +8,7 @@ import (
 	"github.com/xtls/xray-core/infra/conf"
 	"gorm.io/gorm"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
+	"github.com/hcmteam/h-panel/v3/internal/database/model"
 )
 
 func vlessDecryptionEnabled(settings string) bool {

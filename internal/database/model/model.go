@@ -13,8 +13,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/util/json_util"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/hcmteam/h-panel/v3/internal/util/json_util"
+	"github.com/hcmteam/h-panel/v3/internal/xray"
 )
 
 // Protocol represents the protocol type for Xray inbounds.
