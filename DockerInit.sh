@@ -46,7 +46,7 @@ case $PLATFORM in
         ;;
 esac
 set -a
-# shellcheck source=build/dependencies.env
+# shellcheck disable=SC1091
 . /app/build/dependencies.env
 set +a
 MTG_MULTI_VER=$MTG_MULTI_VERSION
