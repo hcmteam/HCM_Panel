@@ -577,7 +577,15 @@ body.dark .ant-drawer-body .drawer-menu .ant-menu-item-group-list {
 
 .sider-version {
   border-radius: var(--ds-radius-9, 9px);
-  font-family: var(--ds-type-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-family: var(
+    --ds-type-mono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace
+  );
 }
 
 body.light .ant-sidebar > .ant-layout-sider,
