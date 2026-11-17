@@ -94,6 +94,12 @@ export default function XrayPage() {
         : '';
   const sectionSlug = pathSection || location.hash.replace(/^#/, '');
   const activeSection = SECTION_SLUGS.includes(sectionSlug) ? sectionSlug : 'basic';
+  const pageTitle =
+    pathSection === 'outbound'
+      ? t('menu.outbounds')
+      : pathSection === 'routing'
+        ? t('menu.routing')
+        : t('menu.xray');
 
   const mutate = useCallback(
     (mutator: (next: XraySettingsValue) => void) => {
@@ -341,7 +347,12 @@ export default function XrayPage() {
               ) : (
                 <Row gutter={[isMobile ? 8 : 16, isMobile ? 0 : 12]}>
                   <Col span={24}>
-                    <Card hoverable>
+                    <div className="xray-heading">
+                      <h1>{pageTitle}</h1>
+                    </div>
+                  </Col>
+                  <Col span={24}>
+                    <Card className="xray-toolbar-card" hoverable>
                       <Row className="header-row">
                         <Col xs={24} sm={14} className="header-actions">
                           <Space>
@@ -359,7 +370,9 @@ export default function XrayPage() {
                   </Col>
 
                   <Col span={24}>
-                    <Card hoverable>{sectionBody}</Card>
+                    <Card className="xray-content-card" hoverable>
+                      {sectionBody}
+                    </Card>
                   </Col>
                 </Row>
               )}

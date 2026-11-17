@@ -117,6 +117,7 @@ export default function GroupAddClientsModal({
 
   return (
     <Modal
+      rootClassName="groups-add-members-modal"
       open={open}
       onCancel={onClose}
       onOk={submit}

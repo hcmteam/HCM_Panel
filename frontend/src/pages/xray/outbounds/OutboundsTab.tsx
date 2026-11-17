@@ -255,6 +255,7 @@ export default function OutboundsTab({
       ? planOutboundDeletion(templateSettings, target)
       : { rules: [], balancers: [], observatory: false, burst: false };
     modal.confirm({
+      rootClassName: 'xray-dialog',
       title: `${t('delete')} ${t('pages.xray.Outbounds')} #${idx + 1}?`,
       content: <DeletionImpactList impact={impact} />,
       okText: t('delete'),
@@ -712,6 +713,7 @@ export default function OutboundsTab({
       </Space>
 
       <Modal
+        rootClassName="xray-dialog"
         title={t('pages.xray.outboundSub.title')}
         open={subDrawerOpen}
         onCancel={() => setSubDrawerOpen(false)}

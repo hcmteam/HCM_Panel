@@ -1,3 +1,14 @@
+.geo-browser-modal .ant-modal-content {
+  background: var(--ds-glass-strong, var(--ant-color-bg-elevated));
+  border: 1px solid var(--ds-border-strong, var(--ant-color-border));
+  border-radius: var(--ds-radius-lg, 16px);
+  box-shadow: var(
+    --ds-shadow-glass,
+    var(--ant-box-shadow-secondary, 0 12px 32px rgba(0, 0, 0, 0.2))
+  );
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
 .geo-browser-modal .geo-toolbar {
   display: flex;
   align-items: center;
@@ -34,8 +45,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid var(--ant-color-border-secondary);
-  border-radius: 8px;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-sm, 8px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
 }
 
 .geo-browser-modal .geo-panel .ant-table-wrapper,
@@ -69,7 +81,7 @@
   justify-content: flex-end;
   flex-wrap: wrap;
   padding: 6px 12px;
-  border-top: 1px solid var(--ant-color-border-secondary);
+  border-top: 1px solid var(--ds-border, var(--ant-color-border-secondary));
   font-variant-numeric: tabular-nums;
 }
 
@@ -121,7 +133,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  border-bottom: 1px solid var(--ant-color-border-secondary);
+  border-bottom: 1px solid var(--ds-border, var(--ant-color-border-secondary));
 }
 
 /* The title is the part that gives way: without min-width it refuses to
@@ -217,5 +229,11 @@
 .geo-unknown-hint {
   display: block;
   margin-top: 4px;
-  font-size: 12px;
+  font-size: var(--ds-type-size-sm, 12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geo-browser-modal .ant-modal-content {
+    backdrop-filter: none;
+  }
 }

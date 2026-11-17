@@ -56,6 +56,7 @@ import {
   type GroupSummary,
 } from '@/schemas/client';
 import { parseMsg } from '@/utils/zodValidate';
+import './GroupsPage.css';
 
 const ClientRecordListSchema = z
   .array(ClientRecordSchema)
@@ -519,6 +520,11 @@ export default function GroupsPage() {
               ) : (
                 <Row gutter={[isMobile ? 8 : 16, isMobile ? 8 : 12]}>
                   <Col span={24}>
+                    <header className="groups-page-heading">
+                      <h1>{t('menu.groups')}</h1>
+                    </header>
+                  </Col>
+                  <Col span={24}>
                     <Card size="small" hoverable className="summary-card">
                       <Row gutter={[16, isMobile ? 16 : 12]}>
                         <Col xs={12} sm={12} md={6}>
@@ -563,6 +569,7 @@ export default function GroupsPage() {
 
                   <Col span={24}>
                     <Card
+                      className="groups-list-shell"
                       size="small"
                       hoverable
                       title={
@@ -579,12 +586,14 @@ export default function GroupsPage() {
                       }
                     >
                       <Table<GroupSummary>
+                        className="groups-table"
                         dataSource={groups}
                         columns={columns}
                         rowKey="name"
                         size="small"
                         pagination={false}
                         loading={loading}
+                        scroll={{ x: 'max-content' }}
                         locale={{
                           emptyText: (
                             <div className="card-empty">
@@ -603,6 +612,7 @@ export default function GroupsPage() {
         </Layout>
 
         <Modal
+          rootClassName="groups-create-modal"
           open={createOpen}
           title={t('pages.groups.addGroup')}
           okText={t('create')}
@@ -627,6 +637,7 @@ export default function GroupsPage() {
         </Modal>
 
         <Modal
+          rootClassName="groups-rename-modal"
           open={renameOpen}
           title={renameTarget ? t('pages.groups.renameTitle', { name: renameTarget.name }) : ''}
           okText={t('save')}
@@ -656,6 +667,7 @@ export default function GroupsPage() {
             emails={groupEmails}
             clients={allClients}
             subSettings={subSettings}
+            modalRootClassName="groups-sublinks-modal"
             onOpenChange={setSubLinksOpen}
           />
         </LazyMount>
@@ -664,6 +676,7 @@ export default function GroupsPage() {
           <ClientBulkAdjustModal
             open={adjustOpen}
             count={groupEmails.length}
+            modalRootClassName="groups-bulk-adjust-modal"
             onOpenChange={setAdjustOpen}
             onSubmit={async (addDays, addBytes, flow, limitHwid, adTag) => {
               const msg = await bulkAdjust(groupEmails, addDays, addBytes, flow, limitHwid, adTag);

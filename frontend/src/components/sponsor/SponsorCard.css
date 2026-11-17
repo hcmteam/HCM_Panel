@@ -3,16 +3,21 @@
   display: flex;
   align-items: stretch;
   min-width: 0;
-  border: 1px solid var(--ant-color-border-secondary);
-  border-radius: var(--ant-border-radius-lg, 8px);
-  background: var(--bg-card, var(--ant-color-fill-quaternary));
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-md, var(--ant-border-radius-lg, 12px));
+  background: var(--ds-glass, var(--bg-card, var(--ant-color-fill-quaternary)));
+  box-shadow: var(--ds-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
   transition:
-    border-color 0.2s,
-    background 0.2s;
+    border-color var(--ds-transition-standard, 200ms ease),
+    background-color var(--ds-transition-standard, 200ms ease),
+    box-shadow var(--ds-transition-standard, 200ms ease);
 }
 
 .sponsor-card:hover {
-  border-color: var(--ant-color-primary);
+  border-color: var(--ds-border-strong, var(--ant-color-primary-border));
+  box-shadow: var(--ds-shadow-card-hover, 0 6px 18px rgba(0, 0, 0, 0.1));
 }
 
 .sponsor-main {
@@ -22,21 +27,27 @@
   gap: 12px;
   min-width: 0;
   padding: 12px 16px;
-  color: var(--ant-color-text);
+  color: var(--ds-text, var(--ant-color-text));
   text-decoration: none;
 }
 
 .sponsor-main:hover,
 .sponsor-main:focus-visible {
-  color: var(--ant-color-text);
+  color: var(--ds-text, var(--ant-color-text));
   outline: none;
+}
+
+.sponsor-main:focus-visible {
+  outline: 2px solid var(--ds-accent, var(--ant-color-primary));
+  outline-offset: -3px;
+  border-radius: inherit;
 }
 
 .sponsor-logo {
   flex: 0 0 auto;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: var(--ds-radius-sm, 8px);
   object-fit: contain;
   background: var(--ant-color-bg-elevated);
 }
@@ -69,11 +80,11 @@
 .sponsor-tag {
   flex: 0 0 auto;
   padding: 0 6px;
-  border: 1px solid var(--ant-color-border);
-  border-radius: 4px;
+  border: 1px solid var(--ds-border, var(--ant-color-border));
+  border-radius: var(--ds-radius-xs, 4px);
   font-size: 11px;
   line-height: 18px;
-  color: var(--ant-color-text-tertiary);
+  color: var(--ds-text-muted, var(--ant-color-text-tertiary));
 }
 
 .sponsor-title {
@@ -83,14 +94,14 @@
 
 .sponsor-text {
   font-size: 13px;
-  color: var(--ant-color-text-secondary);
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
   overflow-wrap: anywhere;
 }
 
 .sponsor-visit {
   flex: 0 0 auto;
   font-size: 13px;
-  color: var(--ant-color-primary);
+  color: var(--ds-accent, var(--ant-color-primary));
   white-space: nowrap;
 }
 
@@ -110,17 +121,21 @@
   margin: 6px 6px 0 0;
   padding: 0;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--ds-radius-xs, 6px);
   background: transparent;
-  color: var(--ant-color-text-tertiary);
+  color: var(--ds-text-muted, var(--ant-color-text-tertiary));
   cursor: pointer;
 }
 
 .sponsor-close:hover,
 .sponsor-close:focus-visible {
-  color: var(--ant-color-text);
+  color: var(--ds-text, var(--ant-color-text));
   background: var(--ant-color-fill-tertiary);
-  outline: none;
+}
+
+.sponsor-close:focus-visible {
+  outline: 2px solid var(--ds-accent, var(--ant-color-primary));
+  outline-offset: 2px;
 }
 
 [dir='rtl'] .sponsor-close {
@@ -191,7 +206,7 @@
 .sponsor-card-card .sponsor-logo {
   width: 72px;
   height: 72px;
-  border-radius: 12px;
+  border-radius: var(--ds-radius-md, 12px);
 }
 
 .sponsor-card-card .sponsor-logo-fallback {
@@ -233,12 +248,23 @@
 
 .sponsor-card-card {
   transition:
-    border-color 0.2s,
-    transform 0.2s,
-    box-shadow 0.2s;
+    border-color var(--ds-transition-standard, 200ms ease),
+    transform var(--ds-transition-standard, 200ms ease),
+    box-shadow var(--ds-transition-standard, 200ms ease);
 }
 
 .sponsor-card-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+  box-shadow: var(--ds-shadow-card-hover, 0 6px 18px rgba(0, 0, 0, 0.08));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-card,
+  .sponsor-card-card {
+    transition: none;
+  }
+
+  .sponsor-card-card:hover {
+    transform: none;
+  }
 }

@@ -22,6 +22,7 @@ const EMPTY: ClientBulkAdjustFormValues = {
 interface ClientBulkAdjustModalProps {
   open: boolean;
   count: number;
+  modalRootClassName?: string;
   onOpenChange: (open: boolean) => void;
   onSubmit: (
     addDays: number,
@@ -35,6 +36,7 @@ interface ClientBulkAdjustModalProps {
 export default function ClientBulkAdjustModal({
   open,
   count,
+  modalRootClassName = 'clients-bulk-adjust-modal',
   onOpenChange,
   onSubmit,
 }: ClientBulkAdjustModalProps) {
@@ -93,6 +95,7 @@ export default function ClientBulkAdjustModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName={modalRootClassName}
         open={open}
         title={t('pages.clients.bulkAdjustTitle', { count })}
         okText={t('confirm')}

@@ -580,6 +580,7 @@ function ClientQrModalContent({
 
   return (
     <Modal
+      rootClassName="clients-qr-modal"
       open={open}
       title={client ? `Key — ${client.email}` : 'Key'}
       footer={null}

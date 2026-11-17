@@ -1,11 +1,12 @@
 .qr-panel {
-  border: 1px solid var(--ant-color-border-secondary);
-  border-radius: 8px;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-sm, 8px);
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  background: var(--ds-glass, rgba(29, 33, 43, 0.72));
 }
 
 .qr-panel-header {
@@ -28,7 +29,8 @@
 .qr-panel-canvas .qr-code {
   cursor: pointer;
   background: #fff;
-  border-radius: 8px;
+  border: 1px solid var(--ds-border, rgba(0, 0, 0, 0.12));
+  border-radius: var(--ds-radius-sm, 8px);
   line-height: 0;
 }
 

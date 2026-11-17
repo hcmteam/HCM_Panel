@@ -222,6 +222,7 @@ export default function RoutingTab({
   function confirmDelete(idx: number) {
     const target = originalRuleIndex(rowsRef.current, idx);
     modal.confirm({
+      rootClassName: 'xray-dialog',
       title: `${t('delete')} ${t('pages.xray.Routings')} #${idx + 1}?`,
       okText: t('delete'),
       okType: 'danger',

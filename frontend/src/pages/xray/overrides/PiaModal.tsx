@@ -318,7 +318,13 @@ export default function PiaModal({
   return (
     <>
       {messageContextHolder}
-      <Modal open={open} title="Private Internet Access WireGuard" footer={null} onCancel={onClose}>
+      <Modal
+        rootClassName="xray-dialog"
+        open={open}
+        title="Private Internet Access WireGuard"
+        footer={null}
+        onCancel={onClose}
+      >
         <FormProvider {...methods}>
           {piaData == null ? (
             <Form

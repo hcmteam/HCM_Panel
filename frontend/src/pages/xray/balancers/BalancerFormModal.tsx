@@ -203,6 +203,7 @@ export default function BalancerFormModal({
 
   return (
     <Modal
+      rootClassName="xray-dialog"
       open={open}
       title={title}
       okText={okText}

@@ -38,7 +38,7 @@ export default function SubQrButton({ value, label, onCopy }: SubQrButtonProps) 
         width={440}
         centered
         destroyOnHidden
-        rootClassName="sub-qr-modal"
+        rootClassName="subscription-page sub-qr-modal"
         title={t('subscription.qrTitle')}
       >
         <p className="sub-muted sub-qr-modal-hint">{t('subscription.qrHint')}</p>

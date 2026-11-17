@@ -86,6 +86,7 @@ export default function FilterDrawer({
 
   return (
     <Drawer
+      rootClassName="clients-filter-drawer"
       title={t('pages.clients.filterTitle')}
       open={open}
       onClose={() => onOpenChange(false)}

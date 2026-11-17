@@ -243,6 +243,7 @@ export default function ClientBulkAddModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName="clients-bulk-add-modal"
         open={open}
         title={t('pages.clients.bulk')}
         okText={t('create')}

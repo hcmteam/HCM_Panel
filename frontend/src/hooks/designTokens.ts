@@ -1,0 +1,230 @@
+import type { ThemeConfig } from 'antd';
+
+const shared = {
+  spacing: {
+    1: '4px',
+    2: '8px',
+    3: '12px',
+    4: '16px',
+    5: '20px',
+    6: '24px',
+    8: '32px',
+    10: '40px',
+    12: '48px',
+  },
+  radius: {
+    xs: '4px',
+    sm: '8px',
+    md: '12px',
+    lg: '16px',
+    xl: '24px',
+    pill: '999px',
+    6: '6px',
+    7: '7px',
+    9: '9px',
+    10: '10px',
+    11: '11px',
+    13: '13px',
+    14: '14px',
+    15: '15px',
+    18: '18px',
+    20: '20px',
+    22: '22px',
+    26: '26px',
+    28: '28px',
+    30: '30px',
+  },
+  blur: { subtle: '10px', standard: '16px', strong: '22px' },
+  typography: {
+    family: "Inter, 'Segoe UI', Roboto, Arial, sans-serif",
+    mono: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+    sizeXs: '11px',
+    sizeSm: '12px',
+    sizeMd: '14px',
+    sizeLg: '16px',
+    sizeXl: '20px',
+    size2xl: '24px',
+    weightRegular: '400',
+    weightMedium: '500',
+    weightSemibold: '600',
+    weightBold: '700',
+    lineHeightTight: '1.25',
+    lineHeightNormal: '1.5',
+    lineHeightRelaxed: '1.65',
+  },
+  transition: {
+    fast: '120ms ease',
+    quick: '140ms ease',
+    subtle: '150ms ease',
+    responsive: '160ms ease',
+    legacy: '180ms ease',
+    standard: '200ms ease',
+    deliberate: '250ms ease',
+  },
+} as const;
+
+const schemes = {
+  light: {
+    canvas: '#e6e8ec',
+    surface: '#ffffff',
+    surfaceRaised: '#ffffff',
+    glass: 'rgba(255, 255, 255, 0.78)',
+    glassStrong: 'rgba(255, 255, 255, 0.92)',
+    text: '#141a2a',
+    textSecondary: '#58647a',
+    textMuted: '#68758c',
+    border: 'rgba(31, 45, 71, 0.12)',
+    borderStrong: 'rgba(31, 45, 71, 0.2)',
+    accent: '#4a5fe0',
+    accentHover: '#3f5ce8',
+    accentActive: '#304bd1',
+    accentText: '#ffffff',
+    success: '#12a36a',
+    warning: '#d9820a',
+    danger: '#e0364a',
+    info: '#0b8fb5',
+    violet: '#6a4fe0',
+    mono: '#2f56d9',
+    toggleOff: '#d5dbea',
+    shadowSm: '0 1px 2px rgba(28, 42, 72, 0.06)',
+    shadowMd: '0 8px 24px rgba(28, 42, 72, 0.1)',
+    shadowLg: '0 18px 48px rgba(28, 42, 72, 0.14)',
+    shadowGlass: '0 12px 32px rgba(28, 42, 72, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.72)',
+    shadowCard: '0 1px 2px rgba(0, 0, 0, 0.04)',
+    shadowCardHover: '0 6px 18px rgba(0, 0, 0, 0.08)',
+    antdBase: '#ffffff',
+    antdLayout: '#e6e8ec',
+    antdContainer: '#ffffff',
+    antdElevated: '#ffffff',
+  },
+  dark: {
+    canvas: '#111318',
+    surface: '#1a1d24',
+    surfaceRaised: '#222630',
+    glass: 'rgba(29, 33, 43, 0.72)',
+    glassStrong: 'rgba(29, 33, 43, 0.9)',
+    text: '#f2f4f8',
+    textSecondary: '#c0c6d2',
+    textMuted: '#929aaa',
+    border: 'rgba(220, 228, 242, 0.1)',
+    borderStrong: 'rgba(220, 228, 242, 0.17)',
+    accent: '#8ea2ff',
+    accentHover: '#a4b3ff',
+    accentActive: '#748bfa',
+    accentText: '#10162c',
+    success: '#45c994',
+    warning: '#f0b35b',
+    danger: '#ff7c89',
+    info: '#55c2df',
+    violet: '#ab91ff',
+    mono: '#70d8f0',
+    toggleOff: 'rgba(255, 255, 255, 0.16)',
+    shadowSm: '0 1px 3px rgba(0, 0, 0, 0.22)',
+    shadowMd: '0 10px 28px rgba(0, 0, 0, 0.28)',
+    shadowLg: '0 20px 52px rgba(0, 0, 0, 0.34)',
+    shadowGlass: '0 12px 32px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.055)',
+    shadowCard: '0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.03)',
+    shadowCardHover: '0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04)',
+    antdBase: '#111318',
+    antdLayout: '#111318',
+    antdContainer: '#1a1d24',
+    antdElevated: '#222630',
+  },
+  ultraDark: {
+    canvas: '#000000',
+    surface: '#101013',
+    surfaceRaised: '#1a1a1e',
+    glass: 'rgba(16, 16, 19, 0.82)',
+    glassStrong: 'rgba(16, 16, 19, 0.95)',
+    text: '#f2f2f4',
+    textSecondary: '#c1c1ca',
+    textMuted: '#90909b',
+    border: 'rgba(255, 255, 255, 0.08)',
+    borderStrong: 'rgba(255, 255, 255, 0.14)',
+    accent: '#9aaaff',
+    accentHover: '#b0bcff',
+    accentActive: '#8195f5',
+    accentText: '#080c1b',
+    success: '#50d39b',
+    warning: '#f1bd6d',
+    danger: '#ff858f',
+    info: '#66cbe4',
+    violet: '#b49cff',
+    mono: '#79def4',
+    toggleOff: 'rgba(255, 255, 255, 0.14)',
+    shadowSm: '0 1px 3px rgba(0, 0, 0, 0.42)',
+    shadowMd: '0 10px 28px rgba(0, 0, 0, 0.5)',
+    shadowLg: '0 20px 52px rgba(0, 0, 0, 0.62)',
+    shadowGlass: '0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04)',
+    shadowCard: '0 1px 2px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.025)',
+    shadowCardHover: '0 8px 24px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.03)',
+    antdBase: '#000000',
+    antdLayout: '#000000',
+    antdContainer: '#101013',
+    antdElevated: '#1a1a1e',
+  },
+} as const;
+
+type Scheme = (typeof schemes)[keyof typeof schemes];
+
+function cssTokenName(name: string): string {
+  return `--ds-${name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`;
+}
+
+export function applyDesignTokens(target: HTMLElement, isDark: boolean, isUltra: boolean): void {
+  const scheme = !isDark ? schemes.light : isUltra ? schemes.ultraDark : schemes.dark;
+  const values = {
+    ...Object.fromEntries(
+      Object.entries(shared.spacing).map(([key, value]) => [`space-${key}`, value]),
+    ),
+    ...Object.fromEntries(
+      Object.entries(shared.radius).map(([key, value]) => [`radius-${key}`, value]),
+    ),
+    ...Object.fromEntries(
+      Object.entries(shared.blur).map(([key, value]) => [`blur-${key}`, value]),
+    ),
+    ...Object.fromEntries(
+      Object.entries(shared.typography).map(([key, value]) => [`type-${key}`, value]),
+    ),
+    ...Object.fromEntries(
+      Object.entries(shared.transition).map(([key, value]) => [`transition-${key}`, value]),
+    ),
+    ...scheme,
+  };
+
+  for (const [name, value] of Object.entries(values)) {
+    target.style.setProperty(cssTokenName(name), value);
+  }
+}
+
+export function getAntdSchemeTokens(isDark: boolean, isUltra: boolean): Scheme {
+  return !isDark ? schemes.light : isUltra ? schemes.ultraDark : schemes.dark;
+}
+
+export function getAntdBaseTokens(isDark: boolean, isUltra: boolean): ThemeConfig['token'] {
+  const scheme = getAntdSchemeTokens(isDark, isUltra);
+  return {
+    colorBgBase: scheme.antdBase,
+    colorBgLayout: scheme.antdLayout,
+    colorBgContainer: scheme.antdContainer,
+    colorBgElevated: scheme.antdElevated,
+    colorPrimary: scheme.accent,
+    colorPrimaryHover: scheme.accentHover,
+    colorPrimaryActive: scheme.accentActive,
+    colorText: scheme.text,
+    colorTextSecondary: scheme.textSecondary,
+    colorTextTertiary: scheme.textMuted,
+    colorBorder: scheme.border,
+    colorBorderSecondary: scheme.border,
+    colorSuccess: scheme.success,
+    colorWarning: scheme.warning,
+    colorError: scheme.danger,
+    colorInfo: scheme.info,
+    borderRadius: Number.parseInt(shared.radius.md, 10),
+    borderRadiusSM: Number.parseInt(shared.radius.sm, 10),
+    borderRadiusLG: Number.parseInt(shared.radius.lg, 10),
+    borderRadiusOuter: Number.parseInt(shared.radius.xl, 10),
+    fontFamily: shared.typography.family,
+    fontSize: Number.parseInt(shared.typography.sizeMd, 10),
+  };
+}

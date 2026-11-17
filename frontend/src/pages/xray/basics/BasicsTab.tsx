@@ -108,6 +108,7 @@ export default function BasicsTab({
 
   function confirmResetDefault() {
     modal.confirm({
+      rootClassName: 'xray-dialog',
       title: t('pages.settings.resetDefaultConfig'),
       okText: t('reset'),
       okType: 'danger',

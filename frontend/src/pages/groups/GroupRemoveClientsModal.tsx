@@ -101,6 +101,7 @@ export default function GroupRemoveClientsModal({
 
   return (
     <Modal
+      rootClassName="groups-remove-members-modal"
       open={open}
       onCancel={onClose}
       onOk={submit}

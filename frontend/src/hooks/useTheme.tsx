@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useLayoutEffect, useMemo, useSt
 import type { ReactNode } from 'react';
 import { theme as antdTheme } from 'antd';
 import type { ThemeConfig } from 'antd';
+import { applyDesignTokens, getAntdBaseTokens, getAntdSchemeTokens } from './designTokens';
 
 const STORAGE_DARK = 'dark-mode';
 const STORAGE_ULTRA = 'isUltraDarkThemeEnabled';
@@ -22,6 +23,7 @@ function applyDom(isDark: boolean, isUltra: boolean) {
   } else {
     document.documentElement.removeAttribute('data-theme');
   }
+  applyDesignTokens(document.documentElement, isDark, isUltra);
   const msg = document.getElementById('message');
   if (msg) {
     msg.classList.remove('dark', 'light');
@@ -34,52 +36,6 @@ const initialDark = readBool(STORAGE_DARK, true);
 const initialUltra = readBool(STORAGE_ULTRA, false);
 applyDom(initialDark, initialUltra);
 
-const DARK_TOKENS = {
-  colorBgBase: '#1a1b1f',
-  colorBgLayout: '#1a1b1f',
-  colorBgContainer: '#23252b',
-  colorBgElevated: '#2d2f37',
-};
-const ULTRA_DARK_TOKENS = {
-  colorBgBase: '#000',
-  colorBgLayout: '#000',
-  colorBgContainer: '#101013',
-  colorBgElevated: '#1a1a1e',
-};
-const DARK_LAYOUT_TOKENS = {
-  bodyBg: '#1a1b1f',
-  headerBg: '#15161a',
-  headerColor: '#ffffff',
-  footerBg: '#1a1b1f',
-  siderBg: '#15161a',
-  triggerBg: '#23252b',
-  triggerColor: '#ffffff',
-};
-const ULTRA_DARK_LAYOUT_TOKENS = {
-  bodyBg: '#000',
-  headerBg: '#050507',
-  headerColor: '#ffffff',
-  footerBg: '#000',
-  siderBg: '#050507',
-  triggerBg: '#1a1a1e',
-  triggerColor: '#ffffff',
-};
-const DARK_MENU_TOKENS = {
-  darkItemBg: '#15161a',
-  darkSubMenuItemBg: '#1a1b1f',
-  darkPopupBg: '#23252b',
-};
-const ULTRA_DARK_MENU_TOKENS = {
-  darkItemBg: '#050507',
-  darkSubMenuItemBg: '#000',
-  darkPopupBg: '#101013',
-};
-const DARK_CARD_TOKENS = {
-  colorBorderSecondary: 'rgba(255, 255, 255, 0.06)',
-};
-const ULTRA_DARK_CARD_TOKENS = {
-  colorBorderSecondary: 'rgba(255, 255, 255, 0.04)',
-};
 const STATISTIC_TOKENS = {
   contentFontSize: 17,
   titleFontSize: 11,
@@ -92,12 +48,6 @@ const LIGHT_CONTRAST_TOKENS = {
   colorErrorText: '#cf1322',
   colorSuccessText: '#237804',
 };
-const LIGHT_BUTTON_TOKENS = {
-  colorPrimary: '#0958d9',
-  colorPrimaryHover: '#2468e5',
-  colorPrimaryActive: '#073ea8',
-};
-
 // hashed:false drops the `:where(.css-<hash>)` wrapper antd puts around every
 // rule. It costs nothing in specificity — `:where()` contributes zero, so the
 // panel's own `.ant-*` overrides still win — and it removes roughly 5,700
@@ -113,25 +63,41 @@ const SHARED_STYLE_CONFIG = {
 } as const;
 
 export function buildAntdThemeConfig(isDark: boolean, isUltra: boolean): ThemeConfig {
+  const scheme = getAntdSchemeTokens(isDark, isUltra);
+  const token = {
+    ...getAntdBaseTokens(isDark, isUltra),
+    ...(isDark ? {} : LIGHT_CONTRAST_TOKENS),
+  };
   if (!isDark) {
     return {
       ...SHARED_STYLE_CONFIG,
       algorithm: antdTheme.defaultAlgorithm,
-      token: LIGHT_CONTRAST_TOKENS,
+      token,
       components: {
         Statistic: STATISTIC_TOKENS,
-        Button: LIGHT_BUTTON_TOKENS,
       },
     };
   }
   return {
     ...SHARED_STYLE_CONFIG,
     algorithm: antdTheme.darkAlgorithm,
-    token: isUltra ? ULTRA_DARK_TOKENS : DARK_TOKENS,
+    token,
     components: {
-      Layout: isUltra ? ULTRA_DARK_LAYOUT_TOKENS : DARK_LAYOUT_TOKENS,
-      Menu: isUltra ? ULTRA_DARK_MENU_TOKENS : DARK_MENU_TOKENS,
-      Card: isUltra ? ULTRA_DARK_CARD_TOKENS : DARK_CARD_TOKENS,
+      Layout: {
+        bodyBg: scheme.antdLayout,
+        headerBg: scheme.antdLayout,
+        headerColor: scheme.text,
+        footerBg: scheme.antdLayout,
+        siderBg: scheme.antdLayout,
+        triggerBg: scheme.antdContainer,
+        triggerColor: scheme.text,
+      },
+      Menu: {
+        darkItemBg: scheme.antdLayout,
+        darkSubMenuItemBg: scheme.antdLayout,
+        darkPopupBg: scheme.antdContainer,
+      },
+      Card: { colorBorderSecondary: scheme.border },
       Statistic: STATISTIC_TOKENS,
     },
   };

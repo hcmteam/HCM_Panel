@@ -1,0 +1,344 @@
+.plans-page .pn-page {
+  width: min(100%, 1440px);
+  min-width: 0;
+  margin-inline: auto;
+  padding: 4px 0 24px;
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.plans-page .pn-plans-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.08));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.plans-page .pn-plans-header .t {
+  min-width: 0;
+}
+
+.plans-page .pn-plans-header .t h1 {
+  margin: 0;
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.plans-page .pn-plans-header .t p {
+  margin: 4px 0 0;
+  color: var(--ds-text-muted, var(--ant-color-text-secondary));
+  font-size: 13px;
+}
+
+.plans-page .pn-plans-header > .ant-btn {
+  min-height: 36px;
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.plans-page .pn-plan-stats {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.plans-page .pn-plan-stats > .pn-stat {
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-md, 12px);
+  background: var(--ds-glass-strong, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.08));
+  transition:
+    transform var(--ds-transition-quick, 140ms ease),
+    border-color var(--ds-transition-quick, 140ms ease),
+    box-shadow var(--ds-transition-quick, 140ms ease);
+}
+
+.plans-page .pn-plan-stats > .pn-stat:hover {
+  transform: translateY(-1px);
+  border-color: var(--ds-border-strong, var(--ant-color-border));
+  box-shadow: var(--ds-shadow-card-hover, 0 6px 18px rgba(0, 0, 0, 0.12));
+}
+
+.plans-page .pn-plan-stats .big {
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: clamp(19px, 2vw, 24px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+
+.plans-page .pn-plan-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: 12px;
+}
+
+.plans-page .pn-plan-grid > .pn-plan-card,
+.plans-page .pn-plan-grid > .pn-new-plan {
+  min-height: 156px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.08));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.plans-page .pn-plan-grid > .pn-plan-card {
+  gap: 9px;
+  padding: 14px !important;
+  border-color: color-mix(
+    in srgb,
+    var(--c, var(--ds-accent, var(--ant-color-primary))) 28%,
+    var(--ds-border, var(--ant-color-border-secondary))
+  );
+  transition:
+    transform var(--ds-transition-quick, 140ms ease),
+    border-color var(--ds-transition-quick, 140ms ease),
+    box-shadow var(--ds-transition-quick, 140ms ease);
+}
+
+.plans-page .pn-plan-grid > .pn-plan-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(
+    in srgb,
+    var(--c, var(--ds-accent, var(--ant-color-primary))) 55%,
+    var(--ds-border-strong, var(--ant-color-border))
+  );
+  box-shadow: var(--ds-shadow-card-hover, 0 8px 24px rgba(0, 0, 0, 0.16));
+}
+
+.plans-page .pn-plan-card > .r {
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.plans-page .pn-plan-card > .r > b {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plans-page .pn-plan-card > .r .ant-btn {
+  flex: none;
+  min-height: 28px;
+  border-radius: var(--ds-radius-xs, 4px);
+}
+
+.plans-page .pn-plan-card > .big {
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: 22px !important;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+
+.plans-page .pn-plan-card > .rg {
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.plans-page .pn-plan-card > .rg .tag {
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-pill, 999px);
+  background: var(--ds-glass-strong, var(--ant-color-bg-container));
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+}
+
+.plans-page .pn-new-plan {
+  min-height: 156px;
+  gap: 6px;
+  border-style: dashed;
+  border-color: var(--ds-border-strong, var(--ant-color-border));
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+  font-size: 24px;
+  transition:
+    border-color var(--ds-transition-quick, 140ms ease),
+    color var(--ds-transition-quick, 140ms ease),
+    background-color var(--ds-transition-quick, 140ms ease);
+}
+
+.plans-page .pn-new-plan:hover {
+  border-color: var(--ds-accent, var(--ant-color-primary));
+  background: var(--ds-glass-strong, var(--ant-color-bg-container));
+  color: var(--ds-accent, var(--ant-color-primary));
+}
+
+.plans-page .pn-empty-state {
+  min-height: 220px;
+  border: 1px dashed var(--ds-border-strong, var(--ant-color-border));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+}
+
+.plans-page .pn-plan-detail-page > .hd {
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+}
+
+.plans-editor-sheet .ant-modal-container,
+.plans-delete-sheet .ant-modal-container,
+.plans-client-sheet .ant-modal-container,
+.plans-editor-sheet .ant-drawer-content,
+.plans-delete-sheet .ant-drawer-content,
+.plans-client-sheet .ant-drawer-content {
+  border: 1px solid var(--ds-border, var(--ant-color-border));
+  background: var(--ds-glass-strong, var(--ant-color-bg-elevated));
+  box-shadow: var(--ds-shadow-glass, var(--ant-box-shadow));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.plans-editor-sheet .ant-modal-container,
+.plans-delete-sheet .ant-modal-container,
+.plans-client-sheet .ant-modal-container {
+  border-radius: var(--ds-radius-lg, 16px);
+}
+
+.plans-editor-sheet .ant-modal-header,
+.plans-editor-sheet .ant-modal-body,
+.plans-editor-sheet .ant-modal-footer,
+.plans-delete-sheet .ant-modal-header,
+.plans-delete-sheet .ant-modal-body,
+.plans-delete-sheet .ant-modal-footer,
+.plans-client-sheet .ant-modal-header,
+.plans-client-sheet .ant-modal-body,
+.plans-client-sheet .ant-modal-footer,
+.plans-editor-sheet .ant-drawer-header,
+.plans-editor-sheet .ant-drawer-body,
+.plans-editor-sheet .ant-drawer-footer,
+.plans-delete-sheet .ant-drawer-header,
+.plans-delete-sheet .ant-drawer-body,
+.plans-delete-sheet .ant-drawer-footer,
+.plans-client-sheet .ant-drawer-header,
+.plans-client-sheet .ant-drawer-body,
+.plans-client-sheet .ant-drawer-footer {
+  background: transparent;
+}
+
+.plans-editor-sheet .ant-modal-header,
+.plans-delete-sheet .ant-modal-header,
+.plans-client-sheet .ant-modal-header,
+.plans-editor-sheet .ant-drawer-header,
+.plans-delete-sheet .ant-drawer-header,
+.plans-client-sheet .ant-drawer-header {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.plans-editor-sheet .ant-modal-footer,
+.plans-delete-sheet .ant-modal-footer,
+.plans-client-sheet .ant-modal-footer,
+.plans-editor-sheet .ant-drawer-footer,
+.plans-delete-sheet .ant-drawer-footer,
+.plans-client-sheet .ant-drawer-footer {
+  border-top-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+@media (max-width: 768px) {
+  .plans-page .pn-page {
+    padding: 0 0 16px;
+  }
+
+  .plans-page .pn-plans-header {
+    gap: 8px;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: var(--ds-radius-md, 12px);
+  }
+
+  .plans-page .pn-plan-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .plans-page .pn-plan-grid > .pn-plan-card,
+  .plans-page .pn-plan-grid > .pn-new-plan {
+    min-height: 146px !important;
+  }
+
+  .plans-page .pn-plan-grid > .pn-plan-card {
+    padding: 11px !important;
+  }
+
+  .plans-page .pn-plan-card > .r > b {
+    font-size: 13px;
+  }
+
+  .plans-page .pn-plan-card > .big {
+    font-size: 19px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .plans-page .pn-plans-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .plans-page .pn-plan-stats {
+    gap: 6px;
+  }
+
+  .plans-page .pn-plan-stats > .pn-stat {
+    padding: 9px;
+  }
+
+  .plans-page .pn-plan-stats .big {
+    font-size: 18px;
+  }
+
+  .plans-page .pn-plan-grid > .pn-plan-card,
+  .plans-page .pn-plan-grid > .pn-new-plan {
+    min-height: 138px !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .plans-page .pn-plans-header,
+  .plans-page .pn-plan-stats > .pn-stat,
+  .plans-page .pn-plan-grid > .pn-plan-card,
+  .plans-page .pn-plan-grid > .pn-new-plan,
+  .plans-page .pn-empty-state,
+  .plans-editor-sheet .ant-modal-container,
+  .plans-delete-sheet .ant-modal-container,
+  .plans-client-sheet .ant-modal-container,
+  .plans-editor-sheet .ant-drawer-content,
+  .plans-delete-sheet .ant-drawer-content,
+  .plans-client-sheet .ant-drawer-content {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--ds-glass-strong, var(--ant-color-bg-container));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plans-page .pn-plan-stats > .pn-stat,
+  .plans-page .pn-plan-grid > .pn-plan-card,
+  .plans-page .pn-new-plan {
+    transition: none;
+  }
+
+  .plans-page .pn-plan-stats > .pn-stat:hover,
+  .plans-page .pn-plan-grid > .pn-plan-card:hover {
+    transform: none;
+  }
+}

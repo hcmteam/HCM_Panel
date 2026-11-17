@@ -1,76 +1,122 @@
-.hosts-card {
+.hosts-page .hosts-card {
   width: 100%;
 }
 
-.host-drag-handle {
+.hosts-page .host-drag-handle {
   cursor: grab;
   touch-action: none;
 }
-.host-drag-handle:focus-visible {
-  outline: 2px solid var(--ant-color-primary);
+
+.hosts-page .host-drag-handle:focus-visible {
+  outline: 2px solid var(--ds-accent, var(--ant-color-primary));
   outline-offset: 2px;
 }
-.host-dragging {
+
+.hosts-page .host-dragging {
   opacity: 0.5;
 }
-.host-drop-before > td {
-  border-top: 2px solid var(--ant-color-primary) !important;
-}
-.host-drop-after > td {
-  border-bottom: 2px solid var(--ant-color-primary) !important;
+
+.hosts-page .hosts-card .host-drop-before > td {
+  border-top: 2px solid var(--ds-accent, var(--ant-color-primary)) !important;
 }
 
-.host-remark-cell {
+.hosts-page .hosts-card .host-drop-after > td {
+  border-bottom: 2px solid var(--ds-accent, var(--ant-color-primary)) !important;
+}
+
+.hosts-page .host-remark-cell {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   line-height: 1.3;
 }
 
-.host-remark {
-  font-weight: 500;
+.hosts-page .host-remark {
+  overflow-wrap: anywhere;
+  color: var(--ds-text, var(--ant-color-text));
+  font-weight: 600;
 }
 
-.host-desc {
-  font-size: 0.82em;
-  color: var(--ant-color-text-secondary);
+.hosts-page .host-desc {
+  overflow-wrap: anywhere;
+  color: var(--ds-text-muted, var(--ant-color-text-secondary));
+  font-size: 12px;
 }
 
-.host-endpoint {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.92em;
+.hosts-page .host-endpoint {
+  font-family: var(--ds-type-mono, var(--font-mono, monospace));
+  font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
-.host-muted {
-  color: var(--ant-color-text-quaternary);
+.hosts-page .host-muted {
+  color: var(--ds-text-muted, var(--ant-color-text-quaternary));
 }
 
 /* card-toolbar is shared with the Clients/Inbounds list cards, but its rules
-   live in a lazily-loaded page stylesheet — re-declare here so the Hosts page
-   renders correctly when opened directly. */
-.hosts-card .card-toolbar {
+   live in lazily-loaded page stylesheets. Keep the Hosts copy local. */
+.hosts-page .hosts-card .card-toolbar {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 @media (min-width: 769px) and (max-width: 920px) {
-  .hosts-card .card-toolbar {
+  .hosts-page .hosts-card .card-toolbar {
     gap: 6px;
   }
 }
 
-/* Empty-table state. The shared .card-empty rule otherwise lives only in the
-   lazily-loaded Clients/Inbounds/Nodes stylesheets, so a direct /hosts refresh
-   would render it unstyled (faint + uncentered) until another page is visited.
-   Re-declare it here so it's correct on first load. */
-.card-empty {
-  text-align: center;
-  color: var(--ant-color-text-secondary);
-  padding: 24px 12px;
+.hosts-page .hosts-card .card-empty {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  padding: 28px 12px;
+  color: var(--ds-text-muted, var(--ant-color-text-secondary));
+  text-align: center;
+}
+
+.hosts-page .hosts-card .ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.hosts-page .hosts-card .ant-table,
+.hosts-page .hosts-card .ant-table-container {
+  background: transparent;
+}
+
+.hosts-page .hosts-card .ant-table-thead > tr > th {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+  background: var(--ds-glass-strong, var(--ant-color-fill-tertiary));
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hosts-page .hosts-card .ant-table-tbody > tr > td {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.hosts-page .hosts-card .ant-table-tbody > tr:hover > td {
+  background: color-mix(in srgb, var(--ds-accent, var(--ant-color-primary)) 7%, transparent);
+}
+
+.hosts-page .hosts-card .ant-table-cell .ant-tag {
+  border-radius: var(--ds-radius-pill, 999px);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  .hosts-page .hosts-card .card-toolbar .ant-btn {
+    min-height: 32px;
+  }
+
+  .hosts-page .hosts-card .ant-table {
+    font-size: 12px;
+  }
 }

@@ -2,9 +2,9 @@
 
 Briefing for the issue analyst in `.github/workflows/claude-issue-analyst.yml`.
 It exists so these facts live in ONE place next to the code instead of being
-restated in the prompt, where they went stale silently. (Pull-request review is
-separate: the reviewer in `.github/workflows/claude-pr-review.yml` is briefed by
-its own prompt, `CLAUDE.md` and `REVIEW.md`, not this.)
+restated in the prompt, where they went stale silently. Pull-request review is
+separate: `.github/workflows/gemini-pr-review.yml` receives the PR diff as
+untrusted review data and uses its own prompt; it does not consume this context.
 
 `CLAUDE.md`, `frontend/CLAUDE.md` and `docs/architecture.md` outrank this file.
 Where they disagree with it, they win and this file is the thing to fix.

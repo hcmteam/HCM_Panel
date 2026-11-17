@@ -1,8 +1,12 @@
 .json-editor-host {
-  border: 1px solid var(--ant-color-border);
-  border-radius: 6px;
+  border: 1px solid var(--ds-border, var(--ant-color-border));
+  border-radius: var(--ds-radius-md, 12px);
   overflow: hidden;
-  background: var(--ant-color-bg-container);
+  background: var(--ds-surface, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.08));
+  transition:
+    border-color var(--ds-transition-subtle, 150ms ease),
+    box-shadow var(--ds-transition-subtle, 150ms ease);
 }
 
 .json-editor-host .cm-editor,
@@ -11,6 +15,14 @@
 }
 
 .json-editor-host:focus-within {
-  border-color: var(--ant-color-primary);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ant-color-primary) 10%, transparent);
+  border-color: var(--ds-accent, var(--ant-color-primary));
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--ds-accent, var(--ant-color-primary)) 16%, transparent),
+    var(--ds-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.08));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .json-editor-host {
+    transition: none;
+  }
 }

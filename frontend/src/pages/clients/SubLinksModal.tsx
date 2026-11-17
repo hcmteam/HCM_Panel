@@ -18,6 +18,7 @@ interface SubLinksModalProps {
   emails: string[];
   clients: ClientRecord[];
   subSettings?: SubSettings;
+  modalRootClassName?: string;
   onOpenChange: (open: boolean) => void;
 }
 
@@ -34,6 +35,7 @@ export default function SubLinksModal({
   emails,
   clients,
   subSettings,
+  modalRootClassName = 'clients-sublinks-modal',
   onOpenChange,
 }: SubLinksModalProps) {
   const { t } = useTranslation();
@@ -149,6 +151,7 @@ export default function SubLinksModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName={modalRootClassName}
         open={open}
         title={t('pages.clients.subLinksTitle', { count: rows.length })}
         width={780}

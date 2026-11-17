@@ -358,6 +358,7 @@ export default function NordModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName="xray-dialog"
         open={open}
         title="NordVPN NordLynx"
         footer={null}

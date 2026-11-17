@@ -87,6 +87,12 @@ export default function ApiDocsPage() {
 
         <Layout className="content-shell">
           <Layout.Content className="content-area">
+            <header className="api-docs-header">
+              <Typography.Title level={2}>{t('menu.apiDocs')}</Typography.Title>
+              <Typography.Paragraph type="secondary">
+                Explore the panel API and its WebSocket event messages.
+              </Typography.Paragraph>
+            </header>
             <Tabs
               items={[
                 {

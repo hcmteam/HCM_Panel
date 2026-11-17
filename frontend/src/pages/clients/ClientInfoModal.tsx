@@ -295,6 +295,7 @@ export default function ClientInfoModal({
     <>
       {messageContextHolder}
       <Modal
+        rootClassName="clients-info-modal"
         open={open}
         title={
           client
@@ -848,6 +849,7 @@ export default function ClientInfoModal({
       </Modal>
 
       <Modal
+        rootClassName="clients-info-ips-modal"
         open={ipsModalOpen}
         title={`${t('pages.inbounds.IPLimitlog')}${client?.email ? ` — ${client.email}` : ''}`}
         width={440}

@@ -175,6 +175,7 @@ export default function RuleFormModal({
 
   return (
     <Modal
+      rootClassName="xray-dialog"
       open={open}
       title={title}
       okText={okText}

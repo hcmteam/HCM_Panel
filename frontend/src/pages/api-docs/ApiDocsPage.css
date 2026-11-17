@@ -1,24 +1,24 @@
 .api-docs-page.is-dark {
-  --sw-bg: #1f2026;
-  --sw-bg-soft: #25272e;
-  --sw-bg-input: #15161a;
-  --sw-bg-code: #0d0e12;
-  --sw-border: rgba(255, 255, 255, 0.08);
-  --sw-border-strong: rgba(255, 255, 255, 0.15);
-  --sw-text: rgba(255, 255, 255, 0.88);
-  --sw-text-muted: rgba(255, 255, 255, 0.6);
-  --sw-text-dim: rgba(255, 255, 255, 0.45);
-  --sw-accent: #58a6ff;
+  --sw-bg: var(--ds-surface, #1a1d24);
+  --sw-bg-soft: var(--ds-glass, rgba(29, 33, 43, 0.72));
+  --sw-bg-input: var(--ds-surface-raised, #222630);
+  --sw-bg-code: var(--ds-canvas, #111318);
+  --sw-border: var(--ds-border, rgba(220, 228, 242, 0.1));
+  --sw-border-strong: var(--ds-border-strong, rgba(220, 228, 242, 0.17));
+  --sw-text: var(--ds-text, #f2f4f8);
+  --sw-text-muted: var(--ds-text-secondary, #c0c6d2);
+  --sw-text-dim: var(--ds-text-muted, #929aaa);
+  --sw-accent: var(--ds-accent, #8ea2ff);
   color-scheme: dark;
 }
 
 .api-docs-page.is-dark.is-ultra {
-  --sw-bg: #0a0a0d;
-  --sw-bg-soft: #131316;
-  --sw-bg-input: #050507;
-  --sw-bg-code: #000;
-  --sw-border: rgba(255, 255, 255, 0.06);
-  --sw-border-strong: rgba(255, 255, 255, 0.12);
+  --sw-bg: var(--ds-surface, #101013);
+  --sw-bg-soft: var(--ds-glass, rgba(16, 16, 19, 0.82));
+  --sw-bg-input: var(--ds-surface-raised, #1a1a1e);
+  --sw-bg-code: var(--ds-canvas, #000);
+  --sw-border: var(--ds-border, rgba(255, 255, 255, 0.08));
+  --sw-border-strong: var(--ds-border-strong, rgba(255, 255, 255, 0.14));
 }
 
 .api-docs-page .content-shell {
@@ -26,29 +26,85 @@
 }
 
 .api-docs-page .content-area {
-  padding: 16px;
+  padding: var(--ds-space-5, 20px);
   max-width: 100%;
+}
+
+.api-docs-page .api-docs-header {
+  margin: 0 auto var(--ds-space-4, 16px);
+  max-width: 1440px;
+  padding: var(--ds-space-4, 16px) var(--ds-space-5, 20px);
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.04));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.api-docs-page .api-docs-header .ant-typography {
+  margin: 0;
+}
+
+.api-docs-page .api-docs-header .ant-typography + .ant-typography {
+  margin-top: var(--ds-space-1, 4px);
 }
 
 @media (max-width: 768px) {
   .api-docs-page .content-area {
-    padding: 8px;
+    padding: var(--ds-space-2, 8px);
     padding-top: 56px;
+  }
+
+  .api-docs-page .api-docs-header {
+    padding: var(--ds-space-3, 12px);
+    margin-bottom: var(--ds-space-3, 12px);
   }
 }
 
 .api-docs-page .docs-wrapper {
-  background: var(--bg-card);
-  border-radius: 8px;
-  border: 1px solid var(--ant-color-border-secondary);
+  max-width: 1440px;
+  margin-inline: auto;
+  background: var(--ds-glass, var(--bg-card));
+  border-radius: var(--ds-radius-lg, 16px);
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.04));
   overflow: hidden;
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
 }
 
 .api-docs-page .websocket-events {
-  padding: 20px;
-  background: var(--bg-card);
-  border: 1px solid var(--ant-color-border-secondary);
-  border-radius: 8px;
+  padding: var(--ds-space-5, 20px);
+  background: var(--ds-glass, var(--bg-card));
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-lg, 16px);
+  box-shadow: var(--ds-shadow-card, 0 1px 2px rgba(0, 0, 0, 0.04));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.api-docs-page .websocket-events > .ant-typography {
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+  margin-bottom: var(--ds-space-4, 16px);
+}
+
+.api-docs-page .websocket-events .ant-card {
+  height: 100%;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.api-docs-page .websocket-events .ant-card-head {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.api-docs-page .websocket-events .ant-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 12px);
 }
 
 .api-docs-page .swagger-ui .section-tabs {
@@ -62,7 +118,8 @@
   overflow: auto;
   color: var(--sw-text, inherit);
   background: var(--sw-bg-code, var(--ant-color-fill-quaternary));
-  border-radius: 6px;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-sm, 8px);
   font-size: 12px;
 }
 
@@ -440,4 +497,211 @@
 .api-docs-page.is-dark .swagger-ui .errors-wrapper .errors h4,
 .api-docs-page.is-dark .swagger-ui .errors-wrapper .errors small {
   color: var(--sw-text);
+}
+
+/* Scoped Swagger polish. Keep operation method colors and syntax token colors
+   supplied by Swagger/highlight.js intact. */
+.api-docs-page .swagger-ui {
+  color: var(--ds-text, var(--ant-color-text));
+  font-family: var(
+    --ds-type-family,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif
+  );
+}
+
+.api-docs-page .swagger-ui .information-container,
+.api-docs-page .swagger-ui .info {
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.api-docs-page .swagger-ui .scheme-container {
+  margin: var(--ds-space-4, 16px) 0;
+  padding: var(--ds-space-4, 16px);
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-md, 12px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.06));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.api-docs-page .swagger-ui .opblock-tag {
+  margin: var(--ds-space-4, 16px) 0 var(--ds-space-2, 8px);
+  padding: var(--ds-space-2, 8px) 0;
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+  color: var(--ds-text, var(--ant-color-text));
+  font-size: var(--ds-type-size-lg, 16px);
+}
+
+.api-docs-page .swagger-ui .opblock {
+  overflow: hidden;
+  border: 1px solid var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-md, 12px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+  box-shadow: var(--ds-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.06));
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.api-docs-page .swagger-ui .opblock .opblock-summary {
+  border-bottom-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.api-docs-page .swagger-ui .opblock .opblock-section-header {
+  background: color-mix(
+    in srgb,
+    var(--ds-glass-strong, var(--ant-color-bg-elevated)) 86%,
+    transparent
+  );
+  box-shadow: inset 0 -1px 0 var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.api-docs-page .swagger-ui .opblock .opblock-section-header h4,
+.api-docs-page .swagger-ui .opblock .opblock-section-header label,
+.api-docs-page .swagger-ui .opblock-title_normal h4,
+.api-docs-page .swagger-ui .responses-inner h4,
+.api-docs-page .swagger-ui .responses-inner h5 {
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.api-docs-page .swagger-ui .opblock .opblock-summary-path,
+.api-docs-page .swagger-ui .opblock .opblock-summary-path__deprecated {
+  color: var(--ds-text, var(--ant-color-text));
+  font-family: var(--ds-type-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+}
+
+.api-docs-page .swagger-ui .opblock .opblock-summary-description,
+.api-docs-page .swagger-ui .opblock-description-wrapper p,
+.api-docs-page .swagger-ui .parameter__in,
+.api-docs-page .swagger-ui .parameter__type,
+.api-docs-page .swagger-ui .response-col_description {
+  color: var(--ds-text-secondary, var(--ant-color-text-secondary));
+}
+
+.api-docs-page .swagger-ui .btn,
+.api-docs-page .swagger-ui .try-out__btn {
+  border-radius: var(--ds-radius-sm, 8px);
+  transition:
+    background-color var(--ds-transition-standard, 200ms ease),
+    border-color var(--ds-transition-standard, 200ms ease),
+    color var(--ds-transition-standard, 200ms ease);
+}
+
+.api-docs-page .swagger-ui .btn:focus-visible,
+.api-docs-page .swagger-ui .try-out__btn:focus-visible,
+.api-docs-page .swagger-ui .opblock-summary-control:focus-visible {
+  outline: 2px solid var(--ds-accent, var(--ant-color-primary));
+  outline-offset: 2px;
+}
+
+.api-docs-page .swagger-ui .btn.execute {
+  background: var(--ds-accent, var(--ant-color-primary));
+  border-color: var(--ds-accent, var(--ant-color-primary));
+  color: var(--ds-accent-text, #fff);
+}
+
+.api-docs-page .swagger-ui .btn.execute:hover {
+  background: var(--ds-accent-hover, var(--ant-color-primary-hover));
+  border-color: var(--ds-accent-hover, var(--ant-color-primary-hover));
+}
+
+.api-docs-page .swagger-ui input[type='text'],
+.api-docs-page .swagger-ui input[type='password'],
+.api-docs-page .swagger-ui input[type='search'],
+.api-docs-page .swagger-ui input[type='email'],
+.api-docs-page .swagger-ui input[type='file'],
+.api-docs-page .swagger-ui textarea,
+.api-docs-page .swagger-ui select,
+.api-docs-page .swagger-ui .filter .operation-filter-input {
+  border-color: var(--ds-border-strong, var(--ant-color-border));
+  border-radius: var(--ds-radius-sm, 8px);
+  background-color: var(--ds-surface, var(--ant-color-bg-container));
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.api-docs-page .swagger-ui .model-box,
+.api-docs-page .swagger-ui section.models,
+.api-docs-page .swagger-ui section.models .model-container {
+  border-color: var(--ds-border, var(--ant-color-border-secondary));
+  border-radius: var(--ds-radius-sm, 8px);
+  background: var(--ds-glass, var(--ant-color-bg-container));
+}
+
+.api-docs-page .swagger-ui section.models .model-container:hover {
+  background: var(--ds-glass-strong, var(--ant-color-bg-elevated));
+}
+
+.api-docs-page .swagger-ui table.parameters,
+.api-docs-page .swagger-ui table.responses-table,
+.api-docs-page .swagger-ui table thead tr,
+.api-docs-page .swagger-ui table tbody tr td {
+  border-color: var(--ds-border, var(--ant-color-border-secondary));
+}
+
+.api-docs-page .swagger-ui .highlight-code,
+.api-docs-page .swagger-ui pre.microlight {
+  border-radius: var(--ds-radius-sm, 8px);
+}
+
+.api-docs-page .swagger-ui a,
+.api-docs-page .swagger-ui .prop-type,
+.api-docs-page .swagger-ui .prop-format {
+  color: var(--ds-accent, var(--ant-color-primary));
+}
+
+.api-docs-page .swagger-ui a:hover {
+  color: var(--ds-accent-hover, var(--ant-color-primary-hover));
+}
+
+.api-docs-page.is-dark .swagger-ui .topbar {
+  background: var(--ds-glass-strong, var(--sw-bg));
+  border-bottom: 1px solid var(--sw-border);
+  -webkit-backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+  backdrop-filter: blur(var(--ds-blur-subtle, 10px));
+}
+
+.api-docs-page.is-dark .swagger-ui .btn.execute {
+  color: var(--ds-accent-text, #10162c);
+}
+
+.api-docs-page.is-dark .swagger-ui .opblock .opblock-section-header {
+  background: color-mix(in srgb, var(--ds-surface-raised, var(--sw-bg-soft)) 82%, transparent);
+}
+
+.api-docs-page .websocket-events .ant-card-title,
+.api-docs-page .websocket-events .ant-typography {
+  color: var(--ds-text, var(--ant-color-text));
+}
+
+.api-docs-page .websocket-events pre {
+  font-family: var(--ds-type-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  line-height: var(--ds-type-line-height-normal, 1.5);
+}
+
+@media (max-width: 768px) {
+  .api-docs-page .websocket-events {
+    padding: var(--ds-space-3, 12px);
+  }
+
+  .api-docs-page .swagger-ui .opblock .opblock-summary {
+    flex-wrap: wrap;
+    row-gap: var(--ds-space-2, 8px);
+  }
+
+  .api-docs-page .swagger-ui .parameters-container,
+  .api-docs-page .swagger-ui .responses-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .api-docs-page .swagger-ui .btn,
+  .api-docs-page .swagger-ui .try-out__btn {
+    transition: none;
+  }
 }
